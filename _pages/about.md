@@ -6,7 +6,7 @@ subtitle: Master's Student in Computational Chemistry
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.jpeg
   image_circular: false
   more_info: >
     <p>Department of Chemistry</p>
