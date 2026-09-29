@@ -8,12 +8,12 @@ last_name: Jung
 contact_note: >
   Feel free to contact me via email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-    Personal academic website of Woo Seok Jung.
+  Personal academic website of Woo Seok Jung.
 
 footer_text: >
   @ Woo Seok Jung
-  
-keywords:  Soft Matter, Statistical Mechanics, Molecular Dynamics / Monte-Carlo Simulation, Machine-Learning
+
+keywords: Soft Matter, Statistical Mechanics, Molecular Dynamics / Monte-Carlo Simulation, Machine-Learning
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
