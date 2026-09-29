@@ -2,7 +2,7 @@
 layout: page
 title: Asymmetry in Binary Vesicles
 description: Curvature-induced asymmetry in cholesterol flip-flop and phase behavior of DPPC/cholesterol vesicles
-img:
+img: assets/img/projects/vesicle_asymmetry.png
 importance: 1
 category: membranes
 ---
