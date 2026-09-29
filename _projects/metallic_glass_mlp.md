@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Fatigue of Metallic Glasses with MLPs
-description: Machine-learning potentials and local structure in Zr–Ni–Al metallic glasses
+title: Fatigue of Metallic Glasses
+description: Machine-learning interatomic potentials for the microscopic mechanism of fatigue
 img:
 importance: 1
 category: materials
 ---
 
-Bulk metallic glasses combine high strength with a lack of crystalline defects, yet their fatigue resistance varies strongly with composition. I train machine-learning interatomic potentials (MLPs) for Zr–Ni–Al metallic glasses and use them in large-scale MD simulations of quenching, uniaxial deformation, and cyclic loading across compositions with different Al content.
+Metallic glasses combine high strength with the absence of crystalline defects, yet their fatigue limits are low, and the general mechanism behind this remains unclear. Addressing this question requires simulations across a broad range of compositions with accuracy close to first-principles calculations.
 
-To connect atomic structure with mechanical response, I analyze Voronoi polyhedra, full-icosahedral clusters and the networks they form, and non-affine displacements (D²min) that mark local plastic rearrangements. The goal is to identify structural signatures that relate to the experimentally measured fatigue limits of these alloys.
+To this end, I developed a machine-learning interatomic potential (MLIP) for Zr–Ni–Al metallic glasses trained on DFT data. Using MD simulations of cyclic loading, I am now studying how local atomic structure, such as icosahedral clusters and their networks, relates to atomic rearrangements, to uncover the microscopic mechanisms of fatigue in metallic glasses.

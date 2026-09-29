@@ -1,12 +1,10 @@
 ---
 layout: page
-title: Vesicle Leaflet Asymmetry
-description: How curvature sorts lipids between the leaflets of binary vesicles
+title: Asymmetry in Binary Vesicles
+description: Curvature-induced asymmetry in cholesterol flip-flop and phase behavior of DPPC/cholesterol vesicles
 img:
-importance: 2
+importance: 1
 category: membranes
 ---
 
-In small, highly curved vesicles, the inner and outer leaflets differ in area and packing, so lipids with different shapes and stiffness do not have to be distributed equally between them. This compositional asymmetry can in turn change the structure and dynamics of each leaflet.
-
-Using coarse-grained MARTINI simulations of binary vesicles (DPPC/DIPC and DPPC/cholesterol) of different sizes, I characterize the leaflet composition together with area per lipid, lipid order, lateral diffusion, and flip-flop. I also examine how the resulting asymmetry depends on the equilibration protocol used to build the vesicle.
+In small vesicles, the high curvature makes the inner and outer leaflets differ in area and lipid packing. Using coarse-grained MARTINI simulations of DPPC/cholesterol vesicles, I study how this curvature induces asymmetry in cholesterol flip-flop dynamics and phase behavior between the two leaflets.
