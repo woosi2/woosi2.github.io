@@ -9,6 +9,16 @@ nav_order: 1
 
 <!-- _pages/publications.md -->
 
+<style>
+  .publications .abbr {
+    display: none;
+  }
+  .publications .col-sm-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+</style>
+
 <!-- Bibsearch Feature -->
 
 {% include bib_search.liquid %}

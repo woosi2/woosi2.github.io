@@ -76,19 +76,34 @@ My research interests lie in **soft matter**, **statistical mechanics**, and **m
     margin: 0;
   }
   @media (min-width: 576px) {
-    .post {
-      position: relative;
-    }
     .post > article > .profile {
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin-left: 0;
+      width: 26.25%;
     }
-    .post > .post-header,
     .post > article > *:not(.profile) {
-      margin-right: calc(30% + 1.5rem);
+      margin-right: calc(26.25% + 1rem);
     }
+    .post > article > h2:has(+ .publications),
+    .post > article > .publications {
+      margin-right: 0;
+    }
+  }
+  .profile .more-info {
+    font-size: 0.85rem;
+  }
+  .post > .post-header {
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .post > article > p:first-of-type {
+    margin-top: 0;
+  }
+  .publications .abbr {
+    display: none;
+  }
+  .publications .col-sm-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 </style>
 
