@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Master's Student in Computational Chemistry
+subtitle: Master's Student in Physical Chemistry
 
 profile:
   align: right
@@ -68,6 +68,14 @@ My research interests lie in **soft matter**, **statistical mechanics**, and **m
   .research details[open] summary::after {
     content: "Show less";
   }
+  .research summary .sub {
+    display: block;
+    padding-left: 1.1rem;
+    color: var(--global-text-color-light);
+  }
+  .post > article > h2 {
+    margin-top: 2.5rem;
+  }
   .research summary:hover {
     background-color: var(--global-divider-color);
   }
@@ -80,7 +88,7 @@ My research interests lie in **soft matter**, **statistical mechanics**, and **m
       width: 26.25%;
     }
     .post > article > *:not(.profile) {
-      margin-right: calc(26.25% + 1rem);
+      margin-right: calc(26.25% + 3rem);
     }
     .post > article > h2:has(+ .publications),
     .post > article > .publications {
@@ -112,14 +120,14 @@ Currently, my research follows two directions:
 <div class="research" markdown="1">
 
 <details markdown="1">
-<summary><b>Lipid vesicles</b> — curvature-induced leaflet asymmetry and vesicle equilibration</summary>
+<summary><b>Lipid vesicles</b><span class="sub">curvature-induced leaflet asymmetry and vesicle equilibration</span></summary>
 
 I study how membrane curvature induces asymmetry in cholesterol flip-flop dynamics and phase behavior in DPPC/cholesterol vesicles. Building on the asymmetry found in binary vesicles, I am extending my research to more complex ternary vesicles known to form raft-like domains. To investigate phase behavior in these systems under well-defined equilibrium conditions, I am currently developing a vesicle equilibration methodology based on hybrid Monte Carlo–molecular dynamics.
 
 </details>
 
 <details markdown="1">
-<summary><b>Metallic glasses</b> — fatigue behavior with machine-learning interatomic potentials</summary>
+<summary><b>Metallic glasses</b><span class="sub">fatigue behavior with machine-learning interatomic potentials</span></summary>
 
 The general mechanism underlying the low fatigue limit of metallic glasses remains unclear. To investigate this problem across a broad range of compositions, I developed a machine-learning interatomic potential (MLIP) trained on DFT data. I am now studying the relationship between local atomic structure and atomic rearrangements to uncover the microscopic mechanisms of fatigue in metallic glasses.
 
