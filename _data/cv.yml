@@ -1,189 +1,65 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
-
-  social_networks:
-    - network: X
-      username: AlbertEinstein
-    - network: GitHub
-      username: example
-    - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+  name: Woo Seok Jung
+  label: M.S. Student in Chemistry, Sogang University
+  email: wshr0307@sogang.ac.kr
+  location: Seoul, South Korea
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: Sogang University
+        location: Seoul, South Korea
+        studyType: M.S. in Chemistry
+        start_date: 2025-03
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Advisor: Prof. Bong June Sung"
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+      - institution: Sogang University
+        location: Seoul, South Korea
+        studyType: B.S. in Chemistry
+        start_date: 2021-03
+        end_date: 2025-02
         highlights:
-          - Description 1.
-          - Description 2.
+          - Micro-major, Artificial Intelligence Convergence
+          - Undergraduate Research Assistant, Soft Matter Computational Chemistry Laboratory
 
-    Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
-        highlights:
-          - Relativity
-          - Description 2.
+    Research Interests:
+      - bullet: "**Microscopic Mechanisms Underlying Macroscopic Properties and Physical Phenomena**<br>Understanding how microscopic structure and dynamics govern macroscopic phenomena in complex materials. Particularly interested in phase behavior in membranes and polymers, ion transport in solid electrolytes, and mechanical behavior in polymers and metallic glasses."
+      - bullet: "**Statistical Mechanics and Molecular Simulation Method Development**<br>Developing and applying diverse computational methods, including molecular simulation and machine learning, to connect microscopic behavior with macroscopic properties."
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
-        highlights:
-          - Description 1.
-          - Description 2.
-
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
-        highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+    Publications & Manuscripts:
+      - bullet: "**W. Jung** and B. J. Sung\\*, Time to Revisit: Do We Really Equilibrate a Vesicle? (manuscript in preparation)."
+      - bullet: "J. Yang†, **W. Jung**†, E. S. Song, S. Kwon, Y. Oh, and B. J. Sung\\*, Curvature Decouples Phase Behavior and Cholesterol Flip-Flop between the Inner and Outer Leaflets of Small Unilamellar Vesicles (submitted)."
 
     Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+      - title: Outstanding Presentation Award
+        awarder: Division of Physical Chemistry, KCS
+        date: 2026-06
 
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+    Conference Presentations:
+      - bullet: "**W. Jung** and B. J. Sung, Development of a Novel Vesicle Equilibration Method Using Hybrid Monte Carlo-Molecular Dynamics Simulation, KCS 138th General Meeting & Exhibition. · *Poster, Oct 2026*"
+      - bullet: "**W. Jung** and B. J. Sung, Do We Really Equilibrate Vesicles?, A3 2026 Summer School at Harbin Institute of Technology (HIT). · *Oral, Jul 2026*"
+      - bullet: "**W. Jung** and B. J. Sung, Development of a Novel Vesicle Equilibration Method Using Hybrid Monte Carlo-Molecular Dynamics Simulation, 149th Summer Symposium of the Division of Physical Chemistry, Korean Chemical Society. · *Oral, Jun 2026*"
+      - bullet: "**W. Jung** and B. J. Sung, Novel Equilibration Method for Ternary Vesicle Simulations Using Hybrid Monte Carlo-Molecular Dynamics, Annual Spring Meeting of the Polymer Society of Korea. · *Poster, Apr 2026*"
+      - bullet: "**W. Jung** and B. J. Sung, System-Dependent Challenges in Equilibration of Vesicle Simulation: DPPC-DIPC Studies Using the Martini Force Field, KCS 136th General Meeting & Exhibition. · *Poster, Oct 2025*"
 
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+    Research Projects:
+      - bullet: "**Identification of Microscopic Fatigue Mechanisms in Metallic Glasses Using Machine-Learned Interatomic Potentials (MLIP)** · *Mar 2026 – Present*<br>Developed a DFT-trained Moment Tensor Potential (MTP) for Zr–Ni–Al metallic glasses across a wide range of compositions, validating structural and dynamical properties. Currently investigating microscopic fatigue mechanisms under cyclic loading by analyzing atomic scale correlations between local structure and non-affine deformation."
+      - bullet: "**Development of a Hybrid Monte Carlo–Molecular Dynamics (MC–MD) Method for Reliable Lipid Vesicle Equilibration** · *Mar 2025 – Present*<br>Developed a hybrid MC–MD method using interleaflet lipid swaps for efficient equilibration of ternary lipid vesicles. Evaluated traditional pore equilibration method by analyzing the convergence of leaflet composition, lipid numbers, and internal water content, and validated equilibrium properties against hybrid MC–MD."
+      - bullet: "**Curvature-Induced Leaflet Asymmetry in Flip-Flop and Phase Behavior of Lipid Vesicles** · *Jul 2024 – Present*<br>Identified curvature-induced leaflet asymmetry in cholesterol flip-flop dynamics and phase behavior using coarse-grained MD simulations. Analyzed leaflet-specific structural properties (APM, P2), cholesterol flip-flop dynamics and free-energy profiles across varying cholesterol concentrations."
+      - bullet: "**Artificial Intelligence (AI) Applications in Chemistry: Trends, Opportunities, and Challenges** (Sponsored by Rebellions Inc., NPU Developer) · *Jun 2025 – Dec 2025*<br>Conducted an independent analysis of AI applications and emerging technologies across major fields of chemistry. Evaluated representative case studies, scalability, potential applications, and limitations of AI-based approaches."
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+    Teaching Experience:
+      - bullet: "**Teaching Assistant, Scientific Writing in English**, Sogang University · *Mar 2026 – Aug 2026*<br>Guided 40 students in improving the organization, clarity, and academic style of their scientific writing in English."
+      - bullet: "**Teaching Assistant, General Chemistry Laboratory**, Sogang University · *Sep 2025 – Feb 2026*<br>Assisted 16 undergraduate students with general chemistry experiments and laboratory techniques."
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+    Additional Experience:
+      - bullet: "**Chemistry Assessment Development Team Lead**, VERADI Co., Ltd. · *Dec 2020 – Mar 2025*<br>Developed chemistry assessment items for Korea's College Scholastic Ability Test (CSAT) and coordinated the production of published mock exams, including the Helios series."
+      - bullet: "**Air Operations Support (CQ)**, Republic of Korea Air Force · *Aug 2018 – Jun 2020*<br>Communicated flight schedules and operational alerts to flying squadrons."
 
-    Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+    Technical Skills & Languages:
+      - label: Programming
+        details: LaTeX, Fortran, Python
+      - label: Languages
+        details: Korean (Native), English
+      - label: Softwares
+        details: Pytorch, LAMMPS, GROMACS, OpenMM, OVITO, VMD
