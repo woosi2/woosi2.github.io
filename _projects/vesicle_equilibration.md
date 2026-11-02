@@ -2,7 +2,7 @@
 layout: page
 title: Vesicle Equilibration
 description: Hybrid Monte Carlo–MD for equilibrating the leaflet composition of multicomponent vesicles
-img: assets/img/projects/vesicle_equilibration_eq2.png
+img: assets/img/projects/vesicle_equilibration_thumb.png
 importance: 2
 category: membranes
 ---

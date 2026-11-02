@@ -1,6 +1,11 @@
 cv:
   name: Woo Seok Jung
-  label: M.S. Student in Chemistry, Sogang University
+  # the <style> rides along in label because the CV layout renders no page content; it hides list dots and aligns date badges
+  label: >-
+    M.S. Student in Chemistry, Sogang University<style>
+    .cv .list-group-item:has(.table-cv) { list-style: none; }
+    #education + .card .table-cv .badge { position: relative; top: 6px; }
+    </style>
   email: wshr0307@sogang.ac.kr
   location: Seoul, South Korea
 
