@@ -208,6 +208,8 @@ collections:
     output: true
   teachings:
     output: true
+  lab_life:
+    output: false
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
