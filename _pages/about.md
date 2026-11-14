@@ -88,6 +88,9 @@ My research interests lie in **soft matter**, **statistical mechanics**, and **m
     .post > article > .profile {
       width: 26.25%;
     }
+    .post > article > .profile img {
+      width: 87.5%; /* advisor line ends level with the bottom of the second research box */
+    }
     .post > article > *:not(.profile) {
       margin-right: calc(26.25% + 3rem);
     }
@@ -119,6 +122,9 @@ My research interests lie in **soft matter**, **statistical mechanics**, and **m
   }
   .profile .more-info .profile-advisor {
     margin-top: 0.65rem;
+  }
+  .post > .post-header .post-title {
+    font-weight: 700;
   }
   .post > .post-header {
     padding-bottom: 0.75rem;
