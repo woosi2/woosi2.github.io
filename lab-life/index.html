@@ -5,15 +5,44 @@
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://woosi2.github.io/lab-life/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
   </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Woo Seok Jung </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories </a> </li> <li class="nav-item active"> <a class="nav-link" href="/lab-life/">lab life <span class="sr-only">(current)</span> </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">lab life</h1> <p class="post-description">Moments from the Soft Matter Computational Chemistry Laboratory at Sogang University.</p> </header> <article> <style>
-  .lab-life {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    gap: 1.5rem;
+  .lab-life .years {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
   }
-  .lab-life .post-card {
+  .lab-life .years a {
+    padding: 0.25rem 0.9rem;
     border: 1px solid var(--global-divider-color);
-    border-radius: 6px;
-    overflow: hidden;
+    border-radius: 999px;
+    color: var(--global-text-color);
+    text-decoration: none;
+  }
+  .lab-life .years a.active {
+    border-color: var(--global-theme-color);
+    background: var(--global-theme-color);
+    color: #fff;
+  }
+  .lab-life .post-row {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 2rem;
+    align-items: start;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .lab-life .post-date {
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+  }
+  .lab-life .post-text h3 {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0.2rem 0 0.75rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .lab-life .post-text p:last-child {
+    margin-bottom: 0;
   }
   .lab-life .carousel {
     position: relative;
@@ -37,10 +66,11 @@
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: contain;
+    border-radius: 6px;
     background: var(--global-divider-color);
   }
   .lab-life .slide figcaption {
-    padding: 0.5rem 1rem 0;
+    padding: 0.5rem 0.25rem 0;
     font-size: 0.85rem;
     color: var(--global-text-color-light);
   }
@@ -75,7 +105,7 @@
     display: flex;
     justify-content: center;
     gap: 0.4rem;
-    padding: 0.6rem 0 0;
+    padding-top: 0.6rem;
   }
   .lab-life .dots button {
     width: 0.5rem;
@@ -89,24 +119,31 @@
   .lab-life .dots button.active {
     background: var(--global-theme-color);
   }
-  .lab-life .post-body {
-    padding: 0.6rem 1rem 1rem;
+  @media (max-width: 767px) {
+    .lab-life .post-row {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+    }
   }
-  .lab-life .post-date {
-    font-size: 0.85rem;
-    color: var(--global-text-color-light);
-  }
-  .lab-life .post-body h3 {
-    font-size: 1.1rem;
-    margin: 0.2rem 0 0;
-  }
-  .lab-life .post-body p:first-of-type {
-    margin-top: 0.5rem;
-  }
-  .lab-life .post-body p:last-child {
-    margin-bottom: 0;
-  }
-</style> <div class="lab-life"> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-10-28-kcs-suwon-1.jpg" alt="Presenting my poster on the vesicle equilibration method." loading="lazy"> <figcaption>Presenting my poster on the vesicle equilibration method.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-10-28-kcs-suwon-2.jpg" alt="An oral session." loading="lazy"> <figcaption>An oral session.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> </div> </div> <div class="post-body"> <div class="post-date"> Oct 28–30, 2026 </div> <h3>Korean Chemical Society meeting in Suwon</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-10-12-maxwell-repair-1.jpg" alt="GPUs inside a Maxwell node." loading="lazy"> <figcaption>GPUs inside a Maxwell node.</figcaption> </figure> </div> </div> <div class="post-body"> <div class="post-date"> Oct 12, 2026 </div> <h3>Maxwell repair</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-10-02-chemists-day-1.jpg" alt="Introducing our lab: statistical mechanics, molecular dynamics, and soft matter." loading="lazy"> <figcaption>Introducing our lab: statistical mechanics, molecular dynamics, and soft matter.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-10-02-chemists-day-2.jpg" alt="Research highlights from the lab." loading="lazy"> <figcaption>Research highlights from the lab.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-10-02-chemists-day-3.jpg" alt="Waiting in line outside." loading="lazy"> <figcaption>Waiting in line outside.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> <button aria-label="Photo 3"></button> </div> </div> <div class="post-body"> <div class="post-date"> Oct 2, 2026 </div> <h3>Chemists' Day</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-09-15-sogang-festival-1.jpg" alt="Food stalls along the campus road." loading="lazy"> <figcaption>Food stalls along the campus road.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-09-15-sogang-festival-2.jpg" alt="Ice cream rolls." loading="lazy"> <figcaption>Ice cream rolls.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-09-15-sogang-festival-3.jpg" alt="Festival day on campus." loading="lazy"> <figcaption>Festival day on campus.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-09-15-sogang-festival-4.jpg" alt="Festival food." loading="lazy"> <figcaption>Festival food.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> <button aria-label="Photo 3"></button> <button aria-label="Photo 4"></button> </div> </div> <div class="post-body"> <div class="post-date"> Sep 15, 2026 </div> <h3>Sogang University festival</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-07-19-hit-summer-school-2.jpg" alt="My talk, “Do We Really Equilibrate Vesicles?”" loading="lazy"> <figcaption>My talk, “Do We Really Equilibrate Vesicles?”</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-07-19-hit-summer-school-3.jpg" alt="During the talk." loading="lazy"> <figcaption>During the talk.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-07-19-hit-summer-school-1.jpg" alt="Lectures at the summer school." loading="lazy"> <figcaption>Lectures at the summer school.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-07-19-hit-summer-school-4.jpg" alt="Sessions in the main hall." loading="lazy"> <figcaption>Sessions in the main hall.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> <button aria-label="Photo 3"></button> <button aria-label="Photo 4"></button> </div> </div> <div class="post-body"> <div class="post-date"> Jul 19–22, 2026 </div> <h3>HIT Summer School</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-06-22-physical-chemistry-division-3.jpg" alt="My talk, “Do We Really Equilibrate Vesicles?”" loading="lazy"> <figcaption>My talk, “Do We Really Equilibrate Vesicles?”</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-06-22-physical-chemistry-division-1.jpg" alt="Outstanding Presentation Award, Division of Physical Chemistry, KCS." loading="lazy"> <figcaption>Outstanding Presentation Award, Division of Physical Chemistry, KCS.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-06-22-physical-chemistry-division-2.jpg" alt="Award ceremony." loading="lazy"> <figcaption>Award ceremony.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-06-22-physical-chemistry-division-4.jpg" alt="Another view of the talk." loading="lazy"> <figcaption>Another view of the talk.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-06-22-physical-chemistry-division-5.jpg" alt="Poster session." loading="lazy"> <figcaption>Poster session.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-06-22-physical-chemistry-division-6.jpg" alt="The main hall." loading="lazy"> <figcaption>The main hall.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> <button aria-label="Photo 3"></button> <button aria-label="Photo 4"></button> <button aria-label="Photo 5"></button> <button aria-label="Photo 6"></button> </div> </div> <div class="post-body"> <div class="post-date"> Jun 22–24, 2026 </div> <h3>KCS Physical Chemistry Division meeting</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-05-29-polymer-theory-meeting-1.jpg" alt="Group photo at the meeting." loading="lazy"> <figcaption>Group photo at the meeting.</figcaption> </figure> </div> </div> <div class="post-body"> <div class="post-date"> May 29, 2026 </div> <h3>27th Discussion Meeting on Polymer Physics Theory</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-05-22-metallic-glass-discussion-1.jpg" alt="Going over results at the desk." loading="lazy"> <figcaption>Going over results at the desk.</figcaption> </figure> </div> </div> <div class="post-body"> <div class="post-date"> May 22, 2026 </div> <h3>Metallic glass discussion</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-04-21-maxwell-flory-repair-1.jpg" alt="Troubleshooting failed package downloads." loading="lazy"> <figcaption>Troubleshooting failed package downloads.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-04-21-maxwell-flory-repair-2.jpg" alt="Nodes opened up on the bench." loading="lazy"> <figcaption>Nodes opened up on the bench.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-04-21-maxwell-flory-repair-3.jpg" alt="Checking the hardware inside a node." loading="lazy"> <figcaption>Checking the hardware inside a node.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> <button aria-label="Photo 3"></button> </div> </div> <div class="post-body"> <div class="post-date"> Apr 21, 2026 </div> <h3>Repairing the Maxwell and Flory clusters</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-04-03-wisconsin-seminar-1.jpg" alt="Prof. Yethiraj's seminar." loading="lazy"> <figcaption>Prof. Yethiraj's seminar.</figcaption> </figure> </div> </div> <div class="post-body"> <div class="post-date"> Apr 3, 2026 </div> <h3>Invited seminar by Prof. Arun Yethiraj (UW–Madison)</h3> <p>Prof. Yethiraj, Prof. Sung’s doctoral advisor, visited our lab and gave an invited seminar.</p> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-01-08-homecoming-day-1.jpg" alt="Talks at the homecoming day." loading="lazy"> <figcaption>Talks at the homecoming day.</figcaption> </figure> </div> </div> <div class="post-body"> <div class="post-date"> Jan 8, 2026 </div> <h3>Homecoming day with Dr. Inhyuk Jang and Dr. Hyeonjeong Bae</h3> <p>Prof. Yethiraj’s former students, now professors, got together for a homecoming day.</p> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-01-05-ups-repair-1.jpg" alt="Replacing the UPS batteries." loading="lazy"> <figcaption>Replacing the UPS batteries.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-01-05-ups-repair-2.jpg" alt="Lunch together after the repair." loading="lazy"> <figcaption>Lunch together after the repair.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> </div> </div> <div class="post-body"> <div class="post-date"> Jan 5, 2026 </div> <h3>UPS repair</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2025-10-22-kcs-changwon-1.jpg" alt="At the poster session." loading="lazy"> <figcaption>At the poster session.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2025-10-22-kcs-changwon-2.jpg" alt="Korean Chemical Society meeting in Changwon" loading="lazy"> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> </div> </div> <div class="post-body"> <div class="post-date"> Oct 22–24, 2025 </div> <h3>Korean Chemical Society meeting in Changwon</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2025-08-22-campus-cats-1.jpg" alt="Two campus cats napping in the sun." loading="lazy"> <figcaption>Two campus cats napping in the sun.</figcaption> </figure> </div> </div> <div class="post-body"> <div class="post-date"> Aug 22, 2025 </div> <h3>Cats we met on a campus walk</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2025-04-16-psk-jeju-1.jpg" alt="Walking between sessions in Jeju." loading="lazy"> <figcaption>Walking between sessions in Jeju.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2025-04-16-psk-jeju-2.jpg" alt="A talk at the meeting." loading="lazy"> <figcaption>A talk at the meeting.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> </div> </div> <div class="post-body"> <div class="post-date"> Apr 16–18, 2025 </div> <h3>Polymer Society of Korea meeting in Jeju</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2025-02-17-gibbs-cluster-setup-1.jpg" alt="Racking the new Gibbs nodes." loading="lazy"> <figcaption>Racking the new Gibbs nodes.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2025-02-17-gibbs-cluster-setup-2.jpg" alt="First power-on." loading="lazy"> <figcaption>First power-on.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2025-02-17-gibbs-cluster-setup-3.jpg" alt="Configuring the network during the OS installation." loading="lazy"> <figcaption>Configuring the network during the OS installation.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> <button aria-label="Photo 3"></button> </div> </div> <div class="post-body"> <div class="post-date"> Feb 17–18, 2025 </div> <h3>Setting up the Gibbs cluster for the first time</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2025-01-31-zwanzig-study-1.jpg" alt="Notes from the Zwanzig study." loading="lazy"> <figcaption>Notes from the Zwanzig study.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2025-01-31-zwanzig-study-2.jpg" alt="The whiteboard after the discussion." loading="lazy"> <figcaption>The whiteboard after the discussion.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> </div> </div> <div class="post-body"> <div class="post-date"> Jan 31, 2025 </div> <h3>Zwanzig study discussion</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2024-08-07-polymer-physics-study-1.jpg" alt="Deriving ensemble averages from the partition function." loading="lazy"> <figcaption>Deriving ensemble averages from the partition function.</figcaption> </figure> </div> </div> <div class="post-body"> <div class="post-date"> Aug 7, 2024 </div> <h3>Polymer physics study (Rubinstein &amp; Colby)</h3> </div> </article> <article class="post-card"> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2024-07-29-ising-discussion-1.jpg" alt="Working through the Ising model on the whiteboard." loading="lazy"> <figcaption>Working through the Ising model on the whiteboard.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2024-07-29-ising-discussion-2.jpg" alt="Metropolis Monte Carlo, from single spin flips to equilibration." loading="lazy"> <figcaption>Metropolis Monte Carlo, from single spin flips to equilibration.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> </div> </div> <div class="post-body"> <div class="post-date"> Jul 29–30, 2024 </div> <h3>Ising model discussion</h3> </div> </article> </div> <script>
+</style> <div class="lab-life"> <nav class="years"> <a href="#2024">2024</a> <a href="#2025">2025</a> <a href="#2026">2026</a> </nav> <section class="year" id="2024"> <article class="post-row"> <div class="post-text"> <div class="post-date"> Aug 7, 2024 </div> <h3>Polymer physics study (Rubinstein &amp; Colby)</h3> <p>A study session on Rubinstein and Colby’s Polymer Physics. We went through the statistical mechanics behind polymer chains, starting from the partition function.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2024-08-07-polymer-physics-study-1.jpg" alt="Deriving ensemble averages from the partition function." loading="lazy"> <figcaption>Deriving ensemble averages from the partition function.</figcaption> </figure> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Jul 29–30, 2024 </div> <h3>Ising model discussion</h3> <p>Shortly after joining the lab as an undergraduate researcher, I worked through the Ising model with labmates. We went from the model itself to Metropolis Monte Carlo sampling on the whiteboard.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2024-07-29-ising-discussion-1.jpg" alt="Working through the Ising model on the whiteboard." loading="lazy"> <figcaption>Working through the Ising model on the whiteboard.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2024-07-29-ising-discussion-2.jpg" alt="Metropolis Monte Carlo, from single spin flips to equilibration." loading="lazy"> <figcaption>Metropolis Monte Carlo, from single spin flips to equilibration.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> </div> </div> </article> </section> <section class="year" id="2025"> <article class="post-row"> <div class="post-text"> <div class="post-date"> Oct 22–24, 2025 </div> <h3>Korean Chemical Society meeting in Changwon</h3> <p>We attended the KCS 136th General Meeting in Changwon. I presented a poster on system-dependent challenges in equilibrating DPPC–DIPC vesicles with the Martini force field.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2025-10-22-kcs-changwon-1.jpg" alt="Presenting my poster." loading="lazy"> <figcaption>Presenting my poster.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2025-10-22-kcs-changwon-2.jpg" alt="Korean Chemical Society meeting in Changwon" loading="lazy"> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Aug 22, 2025 </div> <h3>Cats we met on a campus walk</h3> <p>Two cats we met on a walk around campus. They were napping in the sun and did not seem to mind us.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2025-08-22-campus-cats-1.jpg" alt="Two campus cats napping in the sun." loading="lazy"> <figcaption>Two campus cats napping in the sun.</figcaption> </figure> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Apr 16–18, 2025 </div> <h3>Polymer Society of Korea meeting in Jeju</h3> <p>We attended the spring meeting of the Polymer Society of Korea in Jeju. Between sessions, we had time to walk around the island.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2025-04-16-psk-jeju-1.jpg" alt="Walking between sessions in Jeju." loading="lazy"> <figcaption>Walking between sessions in Jeju.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2025-04-16-psk-jeju-2.jpg" alt="A talk at the meeting." loading="lazy"> <figcaption>A talk at the meeting.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Feb 17–18, 2025 </div> <h3>Setting up the Gibbs cluster for the first time</h3> <p>We set up the new Gibbs cluster from scratch, from racking the nodes to installing the operating system. It was my first time building a cluster by hand.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2025-02-17-gibbs-cluster-setup-1.jpg" alt="Racking the new Gibbs nodes." loading="lazy"> <figcaption>Racking the new Gibbs nodes.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2025-02-17-gibbs-cluster-setup-2.jpg" alt="First power-on." loading="lazy"> <figcaption>First power-on.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2025-02-17-gibbs-cluster-setup-3.jpg" alt="Configuring the network during the OS installation." loading="lazy"> <figcaption>Configuring the network during the OS installation.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> <button aria-label="Photo 3"></button> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Jan 31, 2025 </div> <h3>Zwanzig study discussion</h3> <p>A study session on Zwanzig’s Nonequilibrium Statistical Mechanics. We worked through the derivations together on the whiteboard.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2025-01-31-zwanzig-study-1.jpg" alt="Notes from the Zwanzig study." loading="lazy"> <figcaption>Notes from the Zwanzig study.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2025-01-31-zwanzig-study-2.jpg" alt="The whiteboard after the discussion." loading="lazy"> <figcaption>The whiteboard after the discussion.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> </div> </div> </article> </section> <section class="year" id="2026"> <article class="post-row"> <div class="post-text"> <div class="post-date"> Oct 28–30, 2026 </div> <h3>Korean Chemical Society meeting in Suwon</h3> <p>We attended the KCS 138th General Meeting in Suwon. I presented a poster on our vesicle equilibration method using hybrid Monte Carlo–molecular dynamics.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-10-28-kcs-suwon-1.jpg" alt="Presenting my poster on the vesicle equilibration method." loading="lazy"> <figcaption>Presenting my poster on the vesicle equilibration method.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-10-28-kcs-suwon-2.jpg" alt="An oral session." loading="lazy"> <figcaption>An oral session.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Oct 12, 2026 </div> <h3>Maxwell repair</h3> <p>Another repair day for the Maxwell cluster. This time we opened a GPU node to check the hardware.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-10-12-maxwell-repair-1.jpg" alt="GPUs inside a Maxwell node." loading="lazy"> <figcaption>GPUs inside a Maxwell node.</figcaption> </figure> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Oct 2, 2026 </div> <h3>Chemists' Day</h3> <p>Our lab was introduced at the 2026 Chemists’ Day event. The talk covered our approach: statistical mechanics, molecular dynamics, and soft matter.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-10-02-chemists-day-1.jpg" alt="Introducing our lab: statistical mechanics, molecular dynamics, and soft matter." loading="lazy"> <figcaption>Introducing our lab: statistical mechanics, molecular dynamics, and soft matter.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-10-02-chemists-day-2.jpg" alt="Research highlights from the lab." loading="lazy"> <figcaption>Research highlights from the lab.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-10-02-chemists-day-3.jpg" alt="Waiting in line outside." loading="lazy"> <figcaption>Waiting in line outside.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> <button aria-label="Photo 3"></button> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Sep 15, 2026 </div> <h3>Sogang University festival</h3> <p>The Sogang University festival filled the campus road with food stalls. We took a break from research to look around.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-09-15-sogang-festival-1.jpg" alt="Food stalls along the campus road." loading="lazy"> <figcaption>Food stalls along the campus road.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-09-15-sogang-festival-2.jpg" alt="Ice cream rolls." loading="lazy"> <figcaption>Ice cream rolls.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-09-15-sogang-festival-3.jpg" alt="Festival day on campus." loading="lazy"> <figcaption>Festival day on campus.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-09-15-sogang-festival-4.jpg" alt="Festival food." loading="lazy"> <figcaption>Festival food.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> <button aria-label="Photo 3"></button> <button aria-label="Photo 4"></button> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Jul 19–22, 2026 </div> <h3>A3 Summer School at Harbin Institute of Technology</h3> <p>I gave a talk, “Do We Really Equilibrate Vesicles?”, at the A3 Summer School at Harbin Institute of Technology. The school ran for four days of lectures and student talks.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-07-19-hit-summer-school-2.jpg" alt="My talk, “Do We Really Equilibrate Vesicles?”" loading="lazy"> <figcaption>My talk, “Do We Really Equilibrate Vesicles?”</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-07-19-hit-summer-school-3.jpg" alt="During the talk." loading="lazy"> <figcaption>During the talk.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-07-19-hit-summer-school-1.jpg" alt="Lectures at the summer school." loading="lazy"> <figcaption>Lectures at the summer school.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-07-19-hit-summer-school-4.jpg" alt="Sessions in the main hall." loading="lazy"> <figcaption>Sessions in the main hall.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> <button aria-label="Photo 3"></button> <button aria-label="Photo 4"></button> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Jun 22–24, 2026 </div> <h3>KCS Physical Chemistry Division meeting</h3> <p>I gave an oral presentation on our vesicle equilibration method at the 149th Summer Symposium of the Division of Physical Chemistry, KCS. The talk received the Outstanding Presentation Award.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-06-22-physical-chemistry-division-3.jpg" alt="My talk, “Do We Really Equilibrate Vesicles?”" loading="lazy"> <figcaption>My talk, “Do We Really Equilibrate Vesicles?”</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-06-22-physical-chemistry-division-1.jpg" alt="Outstanding Presentation Award, Division of Physical Chemistry, KCS." loading="lazy"> <figcaption>Outstanding Presentation Award, Division of Physical Chemistry, KCS.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-06-22-physical-chemistry-division-2.jpg" alt="Award ceremony." loading="lazy"> <figcaption>Award ceremony.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-06-22-physical-chemistry-division-4.jpg" alt="Another view of the talk." loading="lazy"> <figcaption>Another view of the talk.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-06-22-physical-chemistry-division-5.jpg" alt="Poster session." loading="lazy"> <figcaption>Poster session.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-06-22-physical-chemistry-division-6.jpg" alt="The main hall." loading="lazy"> <figcaption>The main hall.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> <button aria-label="Photo 3"></button> <button aria-label="Photo 4"></button> <button aria-label="Photo 5"></button> <button aria-label="Photo 6"></button> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> May 29, 2026 </div> <h3>27th Discussion Meeting on Polymer Physics Theory</h3> <p>We attended the 27th Discussion Meeting on Polymer Physics Theory. Everyone gathered for a group photo at the end.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-05-29-polymer-theory-meeting-1.jpg" alt="Group photo at the meeting." loading="lazy"> <figcaption>Group photo at the meeting.</figcaption> </figure> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> May 22, 2026 </div> <h3>Metallic glass discussion</h3> <p>A discussion on our metallic glass project. We went over recent simulation results together at the desk.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-05-22-metallic-glass-discussion-1.jpg" alt="Going over results at the desk." loading="lazy"> <figcaption>Going over results at the desk.</figcaption> </figure> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Apr 21, 2026 </div> <h3>Repairing the Maxwell and Flory clusters</h3> <p>A repair day for the Maxwell and Flory clusters. Most of the day went into opening nodes and fixing failed package installations.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-04-21-maxwell-flory-repair-1.jpg" alt="Troubleshooting failed package downloads." loading="lazy"> <figcaption>Troubleshooting failed package downloads.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-04-21-maxwell-flory-repair-2.jpg" alt="Nodes opened up on the bench." loading="lazy"> <figcaption>Nodes opened up on the bench.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-04-21-maxwell-flory-repair-3.jpg" alt="Checking the hardware inside a node." loading="lazy"> <figcaption>Checking the hardware inside a node.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> <button aria-label="Photo 3"></button> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Apr 3, 2026 </div> <h3>Invited seminar by Prof. Arun Yethiraj (UW–Madison)</h3> <p>Prof. Yethiraj, Prof. Sung’s doctoral advisor, visited our lab and gave an invited seminar. It was a chance to discuss our research with him directly.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-04-03-wisconsin-seminar-1.jpg" alt="Prof. Yethiraj's seminar." loading="lazy"> <figcaption>Prof. Yethiraj's seminar.</figcaption> </figure> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Jan 8, 2026 </div> <h3>Homecoming day with Dr. Inhyuk Jang and Dr. Hyeonjeong Bae</h3> <p>Prof. Yethiraj’s former students, now professors, got together for a homecoming day. Dr. Inhyuk Jang and Dr. Hyeonjeong Bae visited and gave talks.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-01-08-homecoming-day-1.jpg" alt="Talks at the homecoming day." loading="lazy"> <figcaption>Talks at the homecoming day.</figcaption> </figure> </div> </div> </article> <article class="post-row"> <div class="post-text"> <div class="post-date"> Jan 5, 2026 </div> <h3>UPS repair</h3> <p>We replaced the batteries in the lab’s UPS ourselves. Lunch together afterward made up for the work.</p> </div> <div class="carousel"> <div class="track"> <figure class="slide"> <img src="/assets/img/lab_life/2026-01-05-ups-repair-1.jpg" alt="Replacing the UPS batteries." loading="lazy"> <figcaption>Replacing the UPS batteries.</figcaption> </figure> <figure class="slide"> <img src="/assets/img/lab_life/2026-01-05-ups-repair-2.jpg" alt="Lunch together after the repair." loading="lazy"> <figcaption>Lunch together after the repair.</figcaption> </figure> </div> <button class="nav-btn prev" aria-label="Previous photo">‹</button> <button class="nav-btn next" aria-label="Next photo">›</button> <div class="dots"> <button aria-label="Photo 1"></button> <button aria-label="Photo 2"></button> </div> </div> </article> </section> </div> <script>
+  // Year tabs: show one year at a time (the latest by default, or the one in the URL hash).
+  const tabs = document.querySelectorAll(".lab-life .years a");
+  const sections = document.querySelectorAll(".lab-life .year");
+  const showYear = (y) => {
+    if (![...sections].some((s) => s.id === y)) y = sections[sections.length - 1].id;
+    sections.forEach((s) => (s.hidden = s.id !== y));
+    tabs.forEach((t) => t.classList.toggle("active", t.hash === "#" + y));
+    document.querySelectorAll(".lab-life .carousel").forEach((c) => c.update && c.update());
+  };
+  tabs.forEach((t) =>
+    t.addEventListener("click", (e) => {
+      e.preventDefault();
+      showYear(t.hash.slice(1));
+      history.replaceState(null, "", t.hash);
+    }),
+  );
+
+  // Slideshows: arrows, dots, and swipe.
   document.querySelectorAll(".lab-life .carousel").forEach((c) => {
     const track = c.querySelector(".track");
     const dots = c.querySelectorAll(".dots button");
@@ -114,8 +151,8 @@
     const prev = c.querySelector(".prev");
     const next = c.querySelector(".next");
     const go = (i) => track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" });
-    const index = () => Math.round(track.scrollLeft / track.clientWidth);
-    const update = () => {
+    const index = () => Math.round(track.scrollLeft / (track.clientWidth || 1));
+    c.update = () => {
       const i = index();
       dots.forEach((d, k) => d.classList.toggle("active", k === i));
       prev.disabled = i === 0;
@@ -124,9 +161,11 @@
     dots.forEach((d, k) => d.addEventListener("click", () => go(k)));
     prev.addEventListener("click", () => go(index() - 1));
     next.addEventListener("click", () => go(index() + 1));
-    track.addEventListener("scroll", update, { passive: true });
-    update();
+    track.addEventListener("scroll", c.update, { passive: true });
+    c.update();
   });
+
+  if (sections.length) showYear(location.hash.slice(1));
 </script> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Woo Seok Jung. @ Woo Seok Jung </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
@@ -563,97 +602,97 @@ ninja.data = [{
           title: 'Ising model discussion',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2024-07-29-ising-discussion/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-polymer-physics-study-rubinstein-amp-colby",
           title: 'Polymer physics study (Rubinstein &amp;amp; Colby)',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2024-08-07-polymer-physics-study/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-zwanzig-study-discussion",
           title: 'Zwanzig study discussion',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2025-01-31-zwanzig-study/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-setting-up-the-gibbs-cluster-for-the-first-time",
           title: 'Setting up the Gibbs cluster for the first time',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2025-02-17-gibbs-cluster-setup/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-polymer-society-of-korea-meeting-in-jeju",
           title: 'Polymer Society of Korea meeting in Jeju',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2025-04-16-psk-jeju/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-cats-we-met-on-a-campus-walk",
           title: 'Cats we met on a campus walk',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2025-08-22-campus-cats/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-korean-chemical-society-meeting-in-changwon",
           title: 'Korean Chemical Society meeting in Changwon',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2025-10-22-kcs-changwon/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-ups-repair",
           title: 'UPS repair',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2026-01-05-ups-repair/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-homecoming-day-with-dr-inhyuk-jang-and-dr-hyeonjeong-bae",
           title: 'Homecoming day with Dr. Inhyuk Jang and Dr. Hyeonjeong Bae',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2026-01-08-homecoming-day/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-invited-seminar-by-prof-arun-yethiraj-uw-madison",
           title: 'Invited seminar by Prof. Arun Yethiraj (UW–Madison)',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2026-04-03-wisconsin-seminar/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-repairing-the-maxwell-and-flory-clusters",
           title: 'Repairing the Maxwell and Flory clusters',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2026-04-21-maxwell-flory-repair/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-metallic-glass-discussion",
           title: 'Metallic glass discussion',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2026-05-22-metallic-glass-discussion/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-27th-discussion-meeting-on-polymer-physics-theory",
           title: '27th Discussion Meeting on Polymer Physics Theory',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2026-05-29-polymer-theory-meeting/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-kcs-physical-chemistry-division-meeting",
           title: 'KCS Physical Chemistry Division meeting',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2026-06-22-physical-chemistry-division/";
-            },},{id: "lab_life-hit-summer-school",
-          title: 'HIT Summer School',
+              window.location.href = "/lab-life/";
+            },},{id: "lab_life-a3-summer-school-at-harbin-institute-of-technology",
+          title: 'A3 Summer School at Harbin Institute of Technology',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2026-07-19-hit-summer-school/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-sogang-university-festival",
           title: 'Sogang University festival',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2026-09-15-sogang-festival/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-chemists-39-day",
           title: 'Chemists&amp;#39; Day',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2026-10-02-chemists-day/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-maxwell-repair",
           title: 'Maxwell repair',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2026-10-12-maxwell-repair/";
+              window.location.href = "/lab-life/";
             },},{id: "lab_life-korean-chemical-society-meeting-in-suwon",
           title: 'Korean Chemical Society meeting in Suwon',
           description: "",
           section: "Lab_life",handler: () => {
-              window.location.href = "/lab_life/2026-10-28-kcs-suwon/";
+              window.location.href = "/lab-life/";
             },},{id: "news-joined-the-soft-matter-computational-chemistry-laboratory-at-sogang-university-as-an-undergraduate-researcher",
           title: 'Joined the Soft Matter Computational Chemistry Laboratory at Sogang University as an undergraduate...',
           description: "",
