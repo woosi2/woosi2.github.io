@@ -9,3 +9,5 @@ images:
   - src: assets/img/lab_life/2026-04-21-maxwell-flory-repair-3.jpg
     caption: Checking the hardware inside a node.
 ---
+
+A repair day for the Maxwell and Flory clusters. Most of the day went into opening nodes and fixing failed package installations.

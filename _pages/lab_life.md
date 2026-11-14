@@ -9,18 +9,47 @@ nav_order: 5
 
 <!-- To add a post: put photos in assets/img/lab_life/ and add _lab_life/YYYY-MM-DD-short-name.md with
      front matter `title`, `date` (optional `date_end`), and `images` (a list of `src` + optional `caption`),
-     optionally followed by a line of text. Several images become a swipeable slideshow. -->
+     followed by a couple of lines of text. Posts are grouped into year tabs automatically. -->
 
 <style>
-  .lab-life {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    gap: 1.5rem;
+  .lab-life .years {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
   }
-  .lab-life .post-card {
+  .lab-life .years a {
+    padding: 0.25rem 0.9rem;
     border: 1px solid var(--global-divider-color);
-    border-radius: 6px;
-    overflow: hidden;
+    border-radius: 999px;
+    color: var(--global-text-color);
+    text-decoration: none;
+  }
+  .lab-life .years a.active {
+    border-color: var(--global-theme-color);
+    background: var(--global-theme-color);
+    color: #fff;
+  }
+  .lab-life .post-row {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 2rem;
+    align-items: start;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .lab-life .post-date {
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+  }
+  .lab-life .post-text h3 {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0.2rem 0 0.75rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .lab-life .post-text p:last-child {
+    margin-bottom: 0;
   }
   .lab-life .carousel {
     position: relative;
@@ -44,10 +73,11 @@ nav_order: 5
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: contain;
+    border-radius: 6px;
     background: var(--global-divider-color);
   }
   .lab-life .slide figcaption {
-    padding: 0.5rem 1rem 0;
+    padding: 0.5rem 0.25rem 0;
     font-size: 0.85rem;
     color: var(--global-text-color-light);
   }
@@ -82,7 +112,7 @@ nav_order: 5
     display: flex;
     justify-content: center;
     gap: 0.4rem;
-    padding: 0.6rem 0 0;
+    padding-top: 0.6rem;
   }
   .lab-life .dots button {
     width: 0.5rem;
@@ -96,71 +126,92 @@ nav_order: 5
   .lab-life .dots button.active {
     background: var(--global-theme-color);
   }
-  .lab-life .post-body {
-    padding: 0.6rem 1rem 1rem;
-  }
-  .lab-life .post-date {
-    font-size: 0.85rem;
-    color: var(--global-text-color-light);
-  }
-  .lab-life .post-body h3 {
-    font-size: 1.1rem;
-    margin: 0.2rem 0 0;
-  }
-  .lab-life .post-body p:first-of-type {
-    margin-top: 0.5rem;
-  }
-  .lab-life .post-body p:last-child {
-    margin-bottom: 0;
+  @media (max-width: 767px) {
+    .lab-life .post-row {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+    }
   }
 </style>
 
-{% assign posts = site.lab_life | sort: "date" | reverse %}
-{% if posts.size == 0 %}
+{% assign years = site.lab_life | group_by_exp: "post", "post.date | date: '%Y'" | sort: "name" %}
+{% if years.size == 0 %}
 
 <p>Photos and notes from lab life will appear here soon.</p>
 {% else %}
 <div class="lab-life">
-  {% for post in posts %}
-    <article class="post-card">
-      <div class="carousel">
-        <div class="track">
-          {% for image in post.images %}
-            <figure class="slide">
-              <img src="{{ image.src | relative_url }}" alt="{{ image.caption | default: post.title | escape }}" loading="lazy">
-              {% if image.caption %}<figcaption>{{ image.caption | escape }}</figcaption>{% endif %}
-            </figure>
-          {% endfor %}
-        </div>
-        {% if post.images.size > 1 %}
-          <button class="nav-btn prev" aria-label="Previous photo">&#8249;</button>
-          <button class="nav-btn next" aria-label="Next photo">&#8250;</button>
-          <div class="dots">
-            {% for image in post.images %}
-              <button aria-label="Photo {{ forloop.index }}"></button>
-            {% endfor %}
+  <nav class="years">
+    {% for year in years %}
+      <a href="#{{ year.name }}">{{ year.name }}</a>
+    {% endfor %}
+  </nav>
+  {% for year in years %}
+    {% assign posts = year.items | sort: "date" | reverse %}
+    <section class="year" id="{{ year.name }}">
+      {% for post in posts %}
+        <article class="post-row">
+          <div class="post-text">
+            {% assign m0 = post.date | date: "%b" %}
+            <div class="post-date">
+              {% if post.date_end %}
+                {% assign m1 = post.date_end | date: "%b" %}
+                {% if m1 == m0 %}
+                  {{ m0 }} {{ post.date | date: "%-d" }}–{{ post.date_end | date: "%-d" }}, {{ post.date | date: "%Y" }}
+                {% else %}
+                  {{ m0 }} {{ post.date | date: "%-d" }} – {{ post.date_end | date: "%b %-d" }}, {{ post.date | date: "%Y" }}
+                {% endif %}
+              {% else %}
+                {{ post.date | date: "%b %-d, %Y" }}
+              {% endif %}
+            </div>
+            <h3>{{ post.title }}</h3>
+            {{ post.content | markdownify }}
           </div>
-        {% endif %}
-      </div>
-      <div class="post-body">
-        {% assign y0 = post.date | date: "%Y" %}{% assign m0 = post.date | date: "%b" %}
-        <div class="post-date">
-          {% if post.date_end %}
-            {% assign m1 = post.date_end | date: "%b" %}
-            {% if m1 == m0 %}{{ m0 }} {{ post.date | date: "%-d" }}–{{ post.date_end | date: "%-d" }}, {{ y0 }}{% else %}{{ m0 }} {{ post.date | date: "%-d" }} – {{ post.date_end | date: "%b %-d" }}, {{ y0 }}{% endif %}
-          {% else %}
-            {{ post.date | date: "%b %-d, %Y" }}
-          {% endif %}
-        </div>
-        <h3>{{ post.title }}</h3>
-        {{ post.content | markdownify }}
-      </div>
-    </article>
+          <div class="carousel">
+            <div class="track">
+              {% for image in post.images %}
+                <figure class="slide">
+                  <img src="{{ image.src | relative_url }}" alt="{{ image.caption | default: post.title | escape }}" loading="lazy">
+                  {% if image.caption %}<figcaption>{{ image.caption | escape }}</figcaption>{% endif %}
+                </figure>
+              {% endfor %}
+            </div>
+            {% if post.images.size > 1 %}
+              <button class="nav-btn prev" aria-label="Previous photo">&#8249;</button>
+              <button class="nav-btn next" aria-label="Next photo">&#8250;</button>
+              <div class="dots">
+                {% for image in post.images %}
+                  <button aria-label="Photo {{ forloop.index }}"></button>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </section>
   {% endfor %}
 </div>
 {% endif %}
 
 <script>
+  // Year tabs: show one year at a time (the latest by default, or the one in the URL hash).
+  const tabs = document.querySelectorAll(".lab-life .years a");
+  const sections = document.querySelectorAll(".lab-life .year");
+  const showYear = (y) => {
+    if (![...sections].some((s) => s.id === y)) y = sections[sections.length - 1].id;
+    sections.forEach((s) => (s.hidden = s.id !== y));
+    tabs.forEach((t) => t.classList.toggle("active", t.hash === "#" + y));
+    document.querySelectorAll(".lab-life .carousel").forEach((c) => c.update && c.update());
+  };
+  tabs.forEach((t) =>
+    t.addEventListener("click", (e) => {
+      e.preventDefault();
+      showYear(t.hash.slice(1));
+      history.replaceState(null, "", t.hash);
+    }),
+  );
+
+  // Slideshows: arrows, dots, and swipe.
   document.querySelectorAll(".lab-life .carousel").forEach((c) => {
     const track = c.querySelector(".track");
     const dots = c.querySelectorAll(".dots button");
@@ -168,8 +219,8 @@ nav_order: 5
     const prev = c.querySelector(".prev");
     const next = c.querySelector(".next");
     const go = (i) => track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" });
-    const index = () => Math.round(track.scrollLeft / track.clientWidth);
-    const update = () => {
+    const index = () => Math.round(track.scrollLeft / (track.clientWidth || 1));
+    c.update = () => {
       const i = index();
       dots.forEach((d, k) => d.classList.toggle("active", k === i));
       prev.disabled = i === 0;
@@ -178,7 +229,9 @@ nav_order: 5
     dots.forEach((d, k) => d.addEventListener("click", () => go(k)));
     prev.addEventListener("click", () => go(index() - 1));
     next.addEventListener("click", () => go(index() + 1));
-    track.addEventListener("scroll", update, { passive: true });
-    update();
+    track.addEventListener("scroll", c.update, { passive: true });
+    c.update();
   });
+
+  if (sections.length) showYear(location.hash.slice(1));
 </script>

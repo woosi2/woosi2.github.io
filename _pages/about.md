@@ -19,7 +19,7 @@ social: true
 announcements:
   enabled: true
   scrollable: true
-  limit: 5
+  limit: 3
 
 latest_posts:
   enabled: false
@@ -90,10 +90,17 @@ My research interests lie in **soft matter**, **statistical mechanics**, and **m
     .post > article > *:not(.profile) {
       margin-right: calc(26.25% + 3rem);
     }
+    .post > article > h2:has(+ .news),
+    .post > article > .news,
     .post > article > h2:has(+ .publications),
     .post > article > .publications {
       margin-right: 0;
     }
+  }
+  .news th {
+    width: 1% !important;
+    white-space: nowrap;
+    padding-right: 1.5rem;
   }
   .profile .more-info {
     font-size: 0.85rem;

@@ -16,3 +16,5 @@ images:
   - src: assets/img/lab_life/2026-06-22-physical-chemistry-division-6.jpg
     caption: The main hall.
 ---
+
+I gave an oral presentation on our vesicle equilibration method at the 149th Summer Symposium of the Division of Physical Chemistry, KCS. The talk received the Outstanding Presentation Award.

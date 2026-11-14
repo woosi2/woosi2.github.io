@@ -11,3 +11,5 @@ images:
   - src: assets/img/lab_life/2026-09-15-sogang-festival-4.jpg
     caption: Festival food.
 ---
+
+The Sogang University festival filled the campus road with food stalls. We took a break from research to look around.

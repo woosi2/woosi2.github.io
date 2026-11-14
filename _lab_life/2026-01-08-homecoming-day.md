@@ -6,4 +6,4 @@ images:
     caption: Talks at the homecoming day.
 ---
 
-Prof. Yethiraj's former students, now professors, got together for a homecoming day.
+Prof. Yethiraj's former students, now professors, got together for a homecoming day. Dr. Inhyuk Jang and Dr. Hyeonjeong Bae visited and gave talks.

@@ -9,3 +9,5 @@ images:
   - src: assets/img/lab_life/2026-10-02-chemists-day-3.jpg
     caption: Waiting in line outside.
 ---
+
+Our lab was introduced at the 2026 Chemists' Day event. The talk covered our approach: statistical mechanics, molecular dynamics, and soft matter.

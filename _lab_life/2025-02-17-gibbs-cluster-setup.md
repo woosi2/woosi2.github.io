@@ -10,3 +10,5 @@ images:
   - src: assets/img/lab_life/2025-02-17-gibbs-cluster-setup-3.jpg
     caption: Configuring the network during the OS installation.
 ---
+
+We set up the new Gibbs cluster from scratch, from racking the nodes to installing the operating system. It was my first time building a cluster by hand.

@@ -1,5 +1,5 @@
 ---
-title: HIT Summer School
+title: A3 Summer School at Harbin Institute of Technology
 date: 2026-07-19
 date_end: 2026-07-22
 images:
@@ -12,3 +12,5 @@ images:
   - src: assets/img/lab_life/2026-07-19-hit-summer-school-4.jpg
     caption: Sessions in the main hall.
 ---
+
+I gave a talk, “Do We Really Equilibrate Vesicles?”, at the A3 Summer School at Harbin Institute of Technology. The school ran for four days of lectures and student talks.

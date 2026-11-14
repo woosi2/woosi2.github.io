@@ -6,4 +6,4 @@ images:
     caption: "Prof. Yethiraj's seminar."
 ---
 
-Prof. Yethiraj, Prof. Sung's doctoral advisor, visited our lab and gave an invited seminar.
+Prof. Yethiraj, Prof. Sung's doctoral advisor, visited our lab and gave an invited seminar. It was a chance to discuss our research with him directly.
