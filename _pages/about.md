@@ -12,6 +12,7 @@ profile:
     <p>Department of Chemistry</p>
     <p>Sogang University</p>
     <p>Seoul, Republic of Korea</p>
+    <p class="profile-advisor"><span class="profile-metadata-label">Advisor:</span> Bong June Sung</p>
 
 selected_papers: true
 social: true
@@ -104,7 +105,20 @@ My research interests lie in **soft matter**, **statistical mechanics**, and **m
     padding-right: 1.5rem;
   }
   .profile .more-info {
-    font-size: 0.85rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.55;
+    margin-top: 0.75rem;
+  }
+  .profile .more-info p {
+    display: block;
+  }
+  .profile .more-info .profile-metadata-label {
+    font-weight: 500;
+  }
+  .profile .more-info .profile-advisor {
+    margin-top: 0.65rem;
   }
   .post > .post-header {
     padding-bottom: 0.75rem;
