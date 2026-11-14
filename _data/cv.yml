@@ -9,12 +9,14 @@ cv:
   sections:
     RESEARCH INTERESTS:
       - bullet: >-
-          <strong>Microscopic mechanisms underlying macroscopic properties and physical phenomena:</strong> how microscopic structure and dynamics govern
-          macroscopic phenomena in complex materials, particularly phase behavior in membranes and polymers, ion transport in solid electrolytes, and
-          mechanical behavior in polymers and metallic glasses
+          <strong>Molecular mechanisms underlying biological phenomena:</strong> understanding the molecular mechanisms underlying biological functions in
+          complex membranes composed of diverse lipids and proteins, including the effects of membrane curvature
       - bullet: >-
-          <strong>Statistical mechanics and molecular simulation method development:</strong> developing and applying computational methods, including
-          molecular simulation and machine learning, to connect microscopic behavior with macroscopic properties
+          <strong>Structure–dynamics–property relationships in materials:</strong> understanding how local structure and heterogeneous dynamics give rise to
+          phase behavior, mechanical properties, and ion transport in polymers and electrolytes
+      - bullet: >-
+          <strong>Physics-guided computational methods development:</strong> developing physics-guided computational methods based on statistical mechanics
+          and machine learning to overcome existing simulation limitations and explore complex molecular phenomena
     EDUCATION:
       - date_range: Mar 2025 – Present
         title: Sogang University
@@ -23,6 +25,7 @@ cv:
         subtitle_italic: true
         highlights:
           - "Advisor: Prof. Bong June Sung"
+          - "Thesis: “Beyond conventional molecular dynamics: How microscopic reorganization leads to equilibration and fatigue in ternary mixtures”"
       - date_range: Mar 2021 – Feb 2025
         title: Sogang University
         location: Seoul, South Korea
@@ -107,6 +110,8 @@ cv:
         title: Chemistry Assessment Development Team Lead
         subtitle: VERADI Co., Ltd.
         subtitle_italic: true
+        location: Seoul, South Korea
+        location_on_subtitle: true
         highlights:
           - Developed chemistry assessment items for Korea's College Scholastic Ability Test (CSAT) and coordinated the production of published mock exams,
             including the <em>Helios</em> series.
@@ -114,6 +119,8 @@ cv:
         title: Air Operations Support (CQ)
         subtitle: Republic of Korea Air Force
         subtitle_italic: true
+        location: South Korea
+        location_on_subtitle: true
         highlights:
           - Communicated flight schedules and operational alerts to flying squadrons.
     TECHNICAL SKILLS & LANGUAGES:
