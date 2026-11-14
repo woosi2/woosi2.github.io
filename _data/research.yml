@@ -1,0 +1,103 @@
+# Rendered by _pages/research.md. `group` is featured (card with "More details") or additional.
+projects:
+  - id: vesicle-leaflet-asymmetry
+    group: featured
+    title: Curvature-Induced Leaflet Asymmetry in Flip-Flop and Phase Behavior of Lipid Vesicles
+    period: Jul 2024 – Present
+    image: /assets/img/projects/vesicle_asymmetry.png
+    image_alt: Coarse-grained DPPC/cholesterol vesicle showing the inner and outer leaflets.
+    description: >-
+      Identified curvature-induced leaflet asymmetry in cholesterol flip-flop dynamics and phase behavior using coarse-grained MD simulations. Analyzed
+      leaflet-specific structural properties, cholesterol flip-flop dynamics, and free-energy profiles across varying cholesterol concentrations.
+    methods: Coarse-grained MD (Martini) · Area per molecule · P2 order parameter · Cholesterol flip-flop · Free-energy profiles
+    details:
+      - >-
+        In small vesicles, the high curvature makes the inner and outer leaflets differ in area and lipid packing. Using coarse-grained Martini simulations
+        of DPPC/cholesterol vesicles, I study how this curvature induces asymmetry in cholesterol flip-flop dynamics and phase behavior between the two
+        leaflets.
+    papers:
+      - citation: >-
+          J. Yang<sup>†</sup>, <strong>W. Jung</strong><sup>†</sup>, E. S. Song, S. Kwon, Y. Oh, and B. J. Sung*, Curvature Decouples Phase Behavior and
+          Cholesterol Flip-Flop between the Inner and Outer Leaflets of Small Unilamellar Vesicles. Submitted.
+
+  - id: vesicle-equilibration
+    group: featured
+    title: Hybrid Monte Carlo–Molecular Dynamics for Reliable Lipid Vesicle Equilibration
+    period: Mar 2025 – Present
+    image: /assets/img/projects/vesicle_equilibration_thumb.png
+    image_alt: Lipid-swap Monte Carlo move between the inner and outer leaflets of a vesicle.
+    description: >-
+      Developed a hybrid MC–MD method using interleaflet lipid swaps for efficient equilibration of ternary lipid vesicles. Evaluated the traditional pore
+      equilibration method by analyzing the convergence of leaflet composition, lipid numbers, and internal water content, and validated equilibrium
+      properties against hybrid MC–MD.
+    methods: Hybrid MC–MD · Interleaflet lipid swaps · Metropolis criterion · GROMACS 2025 · Leaflet composition convergence
+    details:
+      - >-
+        Building on the asymmetry found in binary vesicles, I am extending my research to more complex ternary vesicles known to form raft-like domains.
+        Interpreting phase behavior in these systems requires well-defined equilibrium conditions. In molecular dynamics, however, phospholipid flip-flop is
+        far slower than accessible simulation times, so the leaflet composition of a vesicle stays close to the initial guess made when the system is built.
+      - >-
+        To address this, I am developing a vesicle equilibration methodology based on hybrid Monte Carlo–molecular dynamics (MC–MD). Periodically during MD,
+        Monte Carlo moves swap lipids between the inner and outer leaflets and are accepted or rejected with the Metropolis criterion based on the energy
+        change, allowing the leaflet composition to relax on timescales that plain MD cannot reach. The method is implemented directly in GROMACS 2025, and
+        the code will be released publicly.
+    figures:
+      - image: /assets/img/projects/vesicle_equilibration_eq2.png
+        alt: Lipid-swap Monte Carlo move between a DPPC and a DIPC in opposite leaflets.
+        caption: >-
+          Lipid-swap Monte Carlo move. A DPPC and a DIPC in opposite leaflets exchange places, and the swap is accepted with the Metropolis criterion based
+          on the energy change ΔE = E<sub>aft</sub> − E<sub>bef</sub>.
+      - image: /assets/img/projects/vesicle_equilibration_eq1.png
+        alt: Inner-leaflet DPPC fraction versus time for the pore method and MC–MD.
+        caption: >-
+          Inner-leaflet DPPC fraction X<sub>Inner, DPPC</sub> during equilibration. The pore method converges in about 20 µs, whereas MC–MD converges in
+          about 250 ns, roughly 80 times faster.
+    papers:
+      - citation: >-
+          <strong>W. Jung</strong> and B. J. Sung*, Time to Revisit: Do We Really Equilibrate a Vesicle? Manuscript in preparation.
+
+  - id: metallic-glass-fatigue
+    group: featured
+    title: Microscopic Fatigue Mechanisms in Metallic Glasses Using Machine-Learned Interatomic Potentials
+    period: Mar 2026 – Present
+    image: /assets/img/projects/metallic_glass_3.png
+    image_alt: A full icosahedral cluster in a Zr–Ni–Al metallic glass.
+    description: >-
+      Developed a DFT-trained Moment Tensor Potential (MTP) for Zr–Ni–Al metallic glasses across a wide range of compositions, validating structural and
+      dynamical properties. Currently investigating microscopic fatigue mechanisms under cyclic loading by analyzing atomic-scale correlations between local
+      structure and non-affine deformation.
+    methods: DFT · Moment Tensor Potential · Cyclic-loading MD · Icosahedral cluster networks · Non-affine deformation
+    details:
+      - >-
+        Metallic glasses combine high strength with the absence of crystalline defects, yet their fatigue limits are low, and the general mechanism behind
+        this remains unclear. Addressing this question requires simulations across a broad range of compositions with accuracy close to first-principles
+        calculations.
+      - >-
+        To this end, I developed a machine-learning interatomic potential (MLIP) for Zr–Ni–Al metallic glasses trained on DFT data. Using MD simulations of
+        cyclic loading, I am now studying how local atomic structure, such as icosahedral clusters and their networks, relates to atomic rearrangements, to
+        uncover the microscopic mechanisms of fatigue in metallic glasses.
+    figures:
+      - image: /assets/img/projects/metallic_glass_1.png
+        alt: Parity plot of MTP versus DFT energies.
+        caption: Parity plot of the moment tensor potential (MTP) against DFT energies.
+      - image: /assets/img/projects/metallic_glass_2.png
+        alt: Parity plot of MTP versus DFT forces.
+        caption: Parity plot of the MTP against DFT forces.
+      - image: /assets/img/projects/metallic_glass_5.png
+        alt: Stress–strain curves under strain-controlled cyclic loading.
+        caption: Strain-controlled cyclic loading of Zr<sub>7</sub>Ni<sub>3</sub>Al<sub>1</sub> (R = 0.1, ε<sub>max</sub> = 0.02–0.06) over 100 cycles.
+      - image: /assets/img/projects/metallic_glass_4.png
+        alt: Connected network of icosahedral clusters and the largest-cluster fraction for four compositions.
+        caption: >-
+          Connected network of icosahedral clusters and the largest cluster as a fraction of all icosahedra for four compositions (931 =
+          Zr<sub>9</sub>Ni<sub>3</sub>Al<sub>1</sub>, 731 = Zr<sub>7</sub>Ni<sub>3</sub>Al<sub>1</sub>, 933 = Zr<sub>9</sub>Ni<sub>3</sub>Al<sub>3</sub>, 733
+          = Zr<sub>7</sub>Ni<sub>3</sub>Al<sub>3</sub>).
+
+  - id: ai-in-chemistry
+    group: additional
+    title: "Artificial Intelligence Applications in Chemistry: Trends, Opportunities, and Challenges"
+    period: Jun 2025 – Dec 2025
+    funding: Rebellions Inc. (NPU Developer)
+    description: >-
+      Conducted an independent analysis of AI applications and emerging technologies across major fields of chemistry. Evaluated representative case
+      studies, scalability, potential applications, and limitations of AI-based approaches.

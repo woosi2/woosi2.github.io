@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Master's Student in Physical Chemistry
 
@@ -90,6 +90,7 @@ My research interests lie in **soft matter**, **statistical mechanics**, and **m
     .post > article > *:not(.profile) {
       margin-right: calc(26.25% + 3rem);
     }
+    .post > article > .more-link,
     .post > article > h2:has(+ .news),
     .post > article > .news,
     .post > article > h2:has(+ .publications),
@@ -120,7 +121,25 @@ My research interests lie in **soft matter**, **statistical mechanics**, and **m
     flex: 0 0 100%;
     max-width: 100%;
   }
+  .post > article > h2 {
+    text-transform: capitalize;
+  }
+  .more-link {
+    margin-top: 0.25rem;
+    text-align: right;
+    font-size: 0.9rem;
+  }
 </style>
+
+<script>
+  // "more" links under the news and selected publications sections, which the layout renders after this content.
+  document.addEventListener("DOMContentLoaded", () => {
+    const more = (sel, href, text) =>
+      document.querySelector(sel)?.insertAdjacentHTML("afterend", `<p class="more-link"><a href="${href}">${text} &rarr;</a></p>`);
+    more(".post > article > .news", "{{ '/news/' | relative_url }}", "All news");
+    more(".post > article > .publications", "{{ '/publications/' | relative_url }}", "All publications");
+  });
+</script>
 
 Currently, my research follows two directions:
 

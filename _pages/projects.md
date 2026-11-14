@@ -3,7 +3,7 @@ layout: page
 title: projects
 permalink: /projects/
 description: Research projects in soft matter and amorphous materials.
-nav: true
+nav: false
 nav_order: 2
 display_categories: [membranes, materials]
 horizontal: false

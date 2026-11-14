@@ -1,35 +1,35 @@
 ---
 layout: page
-permalink: /lab-life/
-title: lab life
+permalink: /life/
+title: Life
 description: Moments from the Soft Matter Computational Chemistry Laboratory at Sogang University.
 nav: true
 nav_order: 5
 ---
 
-<!-- To add a post: put photos in assets/img/lab_life/ and add _lab_life/YYYY-MM-DD-short-name.md with
+<!-- To add a post: put photos in assets/img/life/ and add _life/YYYY-MM-DD-short-name.md with
      front matter `title`, `date` (optional `date_end`), and `images` (a list of `src` + optional `caption`),
      followed by a couple of lines of text. Posts are grouped into year tabs automatically. -->
 
 <style>
-  .lab-life .years {
+  .life .years {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 0.5rem;
   }
-  .lab-life .years a {
+  .life .years a {
     padding: 0.25rem 0.9rem;
     border: 1px solid var(--global-divider-color);
     border-radius: 999px;
     color: var(--global-text-color);
     text-decoration: none;
   }
-  .lab-life .years a.active {
+  .life .years a.active {
     border-color: var(--global-theme-color);
     background: var(--global-theme-color);
     color: #fff;
   }
-  .lab-life .post-row {
+  .life .post-row {
     display: grid;
     grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     gap: 2.5rem;
@@ -37,56 +37,56 @@ nav_order: 5
     padding: 1.75rem 0;
     border-bottom: 1px solid var(--global-divider-color);
   }
-  .lab-life .post-row:nth-child(even) {
+  .life .post-row:nth-child(even) {
     grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   }
-  .lab-life .post-row:nth-child(even) .carousel {
+  .life .post-row:nth-child(even) .carousel {
     order: -1;
   }
-  .lab-life .post-date {
+  .life .post-date {
     font-size: 0.85rem;
     color: var(--global-text-color-light);
   }
-  .lab-life .post-text h3 {
+  .life .post-text h3 {
     font-size: 1.2rem;
     font-style: italic;
     margin: 0.2rem 0 0.75rem;
     padding-bottom: 0.6rem;
     border-bottom: 1px solid var(--global-divider-color);
   }
-  .lab-life .post-text p:last-child {
+  .life .post-text p:last-child {
     margin-bottom: 0;
   }
-  .lab-life .carousel {
+  .life .carousel {
     position: relative;
   }
-  .lab-life .track {
+  .life .track {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
   }
-  .lab-life .track::-webkit-scrollbar {
+  .life .track::-webkit-scrollbar {
     display: none;
   }
-  .lab-life .slide {
+  .life .slide {
     flex: 0 0 100%;
     margin: 0;
     scroll-snap-align: center;
   }
-  .lab-life .slide img {
+  .life .slide img {
     display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: contain;
   }
-  .lab-life .slide figcaption {
+  .life .slide figcaption {
     padding: 0.5rem 0.25rem 0;
     text-align: center;
     font-size: 0.85rem;
     color: var(--global-text-color-light);
   }
-  .lab-life .nav-btn {
+  .life .nav-btn {
     position: absolute;
     top: 0;
     margin-top: calc(37.5% - 1rem);
@@ -101,25 +101,25 @@ nav_order: 5
     cursor: pointer;
     opacity: 0.8;
   }
-  .lab-life .nav-btn:hover {
+  .life .nav-btn:hover {
     opacity: 1;
   }
-  .lab-life .nav-btn.prev {
+  .life .nav-btn.prev {
     left: 0.5rem;
   }
-  .lab-life .nav-btn.next {
+  .life .nav-btn.next {
     right: 0.5rem;
   }
-  .lab-life .nav-btn:disabled {
+  .life .nav-btn:disabled {
     visibility: hidden;
   }
-  .lab-life .dots {
+  .life .dots {
     display: flex;
     justify-content: center;
     gap: 0.4rem;
     padding-top: 0.6rem;
   }
-  .lab-life .dots button {
+  .life .dots button {
     width: 0.5rem;
     height: 0.5rem;
     padding: 0;
@@ -128,29 +128,29 @@ nav_order: 5
     background: var(--global-divider-color);
     cursor: pointer;
   }
-  .lab-life .dots button.active {
+  .life .dots button.active {
     background: var(--global-theme-color);
   }
   @media (max-width: 767px) {
-    .lab-life .post-row {
+    .life .post-row {
       grid-template-columns: minmax(0, 1fr);
       gap: 1rem;
     }
-    .lab-life .post-row:nth-child(even) {
+    .life .post-row:nth-child(even) {
       grid-template-columns: minmax(0, 1fr);
     }
-    .lab-life .post-row:nth-child(even) .carousel {
+    .life .post-row:nth-child(even) .carousel {
       order: 0;
     }
   }
 </style>
 
-{% assign years = site.lab_life | group_by_exp: "post", "post.date | date: '%Y'" | sort: "name" %}
+{% assign years = site.life | group_by_exp: "post", "post.date | date: '%Y'" | sort: "name" %}
 {% if years.size == 0 %}
 
 <p>Photos and notes from lab life will appear here soon.</p>
 {% else %}
-<div class="lab-life">
+<div class="life">
   <nav class="years">
     {% for year in years %}
       <a href="#{{ year.name }}">{{ year.name }}</a>
@@ -206,13 +206,13 @@ nav_order: 5
 
 <script>
   // Year tabs: show one year at a time (the latest by default, or the one in the URL hash).
-  const tabs = document.querySelectorAll(".lab-life .years a");
-  const sections = document.querySelectorAll(".lab-life .year");
+  const tabs = document.querySelectorAll(".life .years a");
+  const sections = document.querySelectorAll(".life .year");
   const showYear = (y) => {
     if (![...sections].some((s) => s.id === y)) y = sections[sections.length - 1].id;
     sections.forEach((s) => (s.hidden = s.id !== y));
     tabs.forEach((t) => t.classList.toggle("active", t.hash === "#" + y));
-    document.querySelectorAll(".lab-life .carousel").forEach((c) => c.update && c.update());
+    document.querySelectorAll(".life .carousel").forEach((c) => c.update && c.update());
   };
   tabs.forEach((t) =>
     t.addEventListener("click", (e) => {
@@ -223,7 +223,7 @@ nav_order: 5
   );
 
   // Slideshows: arrows, dots, and swipe.
-  document.querySelectorAll(".lab-life .carousel").forEach((c) => {
+  document.querySelectorAll(".life .carousel").forEach((c) => {
     const track = c.querySelector(".track");
     const dots = c.querySelectorAll(".dots button");
     if (!dots.length) return;

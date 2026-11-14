@@ -1,70 +1,122 @@
+# Rendered by _pages/cv.md (custom layout). Section names are shown as written.
+# A section is either a list of `bullet` entries (HTML allowed) or dated entries with
+# date_range / title / location / subtitle (subtitle_italic, location_on_subtitle) / highlights.
 cv:
   name: Woo Seok Jung
-  # the <style> rides along in label because the CV layout renders no page content; it hides list dots and aligns date badges
-  label: >-
-    M.S. Student in Chemistry, Sogang University<style>
-    .cv .list-group-item:has(.table-cv) { list-style: none; }
-    #education + .card .table-cv .badge { position: relative; top: 6px; }
-    </style>
   email: wshr0307@sogang.ac.kr
   location: Seoul, South Korea
-
+  website: https://woosi2.github.io
   sections:
-    Education:
-      - institution: Sogang University
+    RESEARCH INTERESTS:
+      - bullet: >-
+          <strong>Microscopic mechanisms underlying macroscopic properties and physical phenomena:</strong> how microscopic structure and dynamics govern
+          macroscopic phenomena in complex materials, particularly phase behavior in membranes and polymers, ion transport in solid electrolytes, and
+          mechanical behavior in polymers and metallic glasses
+      - bullet: >-
+          <strong>Statistical mechanics and molecular simulation method development:</strong> developing and applying computational methods, including
+          molecular simulation and machine learning, to connect microscopic behavior with macroscopic properties
+    EDUCATION:
+      - date_range: Mar 2025 – Present
+        title: Sogang University
         location: Seoul, South Korea
-        studyType: M.S. in Chemistry
-        start_date: 2025-03
+        subtitle: M.S. in Chemistry
+        subtitle_italic: true
         highlights:
           - "Advisor: Prof. Bong June Sung"
-
-      - institution: Sogang University
+      - date_range: Mar 2021 – Feb 2025
+        title: Sogang University
         location: Seoul, South Korea
-        studyType: B.S. in Chemistry
-        start_date: 2021-03
-        end_date: 2025-02
+        subtitle: B.S. in Chemistry
+        subtitle_italic: true
         highlights:
           - Micro-major, Artificial Intelligence Convergence
           - Undergraduate Research Assistant, Soft Matter Computational Chemistry Laboratory
-
-    Research Interests:
-      - bullet: "**Microscopic Mechanisms Underlying Macroscopic Properties and Physical Phenomena**<br>Understanding how microscopic structure and dynamics govern macroscopic phenomena in complex materials. Particularly interested in phase behavior in membranes and polymers, ion transport in solid electrolytes, and mechanical behavior in polymers and metallic glasses."
-      - bullet: "**Statistical Mechanics and Molecular Simulation Method Development**<br>Developing and applying diverse computational methods, including molecular simulation and machine learning, to connect microscopic behavior with macroscopic properties."
-
-    Publications & Manuscripts:
-      - bullet: "**W. Jung** and B. J. Sung\\*, Time to Revisit: Do We Really Equilibrate a Vesicle? (manuscript in preparation)."
-      - bullet: "J. Yang†, **W. Jung**†, E. S. Song, S. Kwon, Y. Oh, and B. J. Sung\\*, Curvature Decouples Phase Behavior and Cholesterol Flip-Flop between the Inner and Outer Leaflets of Small Unilamellar Vesicles (submitted)."
-
-    Awards:
-      - title: Outstanding Presentation Award
-        awarder: Division of Physical Chemistry, KCS
-        date: 2026-06
-
-    Conference Presentations:
-      - bullet: "**W. Jung** and B. J. Sung, Development of a Novel Vesicle Equilibration Method Using Hybrid Monte Carlo-Molecular Dynamics Simulation, KCS 138th General Meeting & Exhibition. · *Poster, Oct 2026*"
-      - bullet: "**W. Jung** and B. J. Sung, Do We Really Equilibrate Vesicles?, A3 2026 Summer School at Harbin Institute of Technology (HIT). · *Oral, Jul 2026*"
-      - bullet: "**W. Jung** and B. J. Sung, Development of a Novel Vesicle Equilibration Method Using Hybrid Monte Carlo-Molecular Dynamics Simulation, 149th Summer Symposium of the Division of Physical Chemistry, Korean Chemical Society. · *Oral, Jun 2026*"
-      - bullet: "**W. Jung** and B. J. Sung, Novel Equilibration Method for Ternary Vesicle Simulations Using Hybrid Monte Carlo-Molecular Dynamics, Annual Spring Meeting of the Polymer Society of Korea. · *Poster, Apr 2026*"
-      - bullet: "**W. Jung** and B. J. Sung, System-Dependent Challenges in Equilibration of Vesicle Simulation: DPPC-DIPC Studies Using the Martini Force Field, KCS 136th General Meeting & Exhibition. · *Poster, Oct 2025*"
-
-    Research Projects:
-      - bullet: "**Identification of Microscopic Fatigue Mechanisms in Metallic Glasses Using Machine-Learned Interatomic Potentials (MLIP)** · *Mar 2026 – Present*<br>Developed a DFT-trained Moment Tensor Potential (MTP) for Zr–Ni–Al metallic glasses across a wide range of compositions, validating structural and dynamical properties. Currently investigating microscopic fatigue mechanisms under cyclic loading by analyzing atomic scale correlations between local structure and non-affine deformation."
-      - bullet: "**Development of a Hybrid Monte Carlo–Molecular Dynamics (MC–MD) Method for Reliable Lipid Vesicle Equilibration** · *Mar 2025 – Present*<br>Developed a hybrid MC–MD method using interleaflet lipid swaps for efficient equilibration of ternary lipid vesicles. Evaluated traditional pore equilibration method by analyzing the convergence of leaflet composition, lipid numbers, and internal water content, and validated equilibrium properties against hybrid MC–MD."
-      - bullet: "**Curvature-Induced Leaflet Asymmetry in Flip-Flop and Phase Behavior of Lipid Vesicles** · *Jul 2024 – Present*<br>Identified curvature-induced leaflet asymmetry in cholesterol flip-flop dynamics and phase behavior using coarse-grained MD simulations. Analyzed leaflet-specific structural properties (APM, P2), cholesterol flip-flop dynamics and free-energy profiles across varying cholesterol concentrations."
-      - bullet: "**Artificial Intelligence (AI) Applications in Chemistry: Trends, Opportunities, and Challenges** (Sponsored by Rebellions Inc., NPU Developer) · *Jun 2025 – Dec 2025*<br>Conducted an independent analysis of AI applications and emerging technologies across major fields of chemistry. Evaluated representative case studies, scalability, potential applications, and limitations of AI-based approaches."
-
-    Teaching Experience:
-      - bullet: "**Teaching Assistant, Scientific Writing in English**, Sogang University · *Mar 2026 – Aug 2026*<br>Guided 40 students in improving the organization, clarity, and academic style of their scientific writing in English."
-      - bullet: "**Teaching Assistant, General Chemistry Laboratory**, Sogang University · *Sep 2025 – Feb 2026*<br>Assisted 16 undergraduate students with general chemistry experiments and laboratory techniques."
-
-    Additional Experience:
-      - bullet: "**Chemistry Assessment Development Team Lead**, VERADI Co., Ltd. · *Dec 2020 – Mar 2025*<br>Developed chemistry assessment items for Korea's College Scholastic Ability Test (CSAT) and coordinated the production of published mock exams, including the Helios series."
-      - bullet: "**Air Operations Support (CQ)**, Republic of Korea Air Force · *Aug 2018 – Jun 2020*<br>Communicated flight schedules and operational alerts to flying squadrons."
-
-    Technical Skills & Languages:
-      - label: Programming
-        details: LaTeX, Fortran, Python
-      - label: Languages
-        details: Korean (Native), English
-      - label: Softwares
-        details: Pytorch, LAMMPS, GROMACS, OpenMM, OVITO, VMD
+    PUBLICATIONS:
+      - bullet: >-
+          <strong>W. Jung</strong> and B. J. Sung*, Time to Revisit: Do We Really Equilibrate a Vesicle? Manuscript in preparation.
+      - bullet: >-
+          J. Yang<sup>†</sup>, <strong>W. Jung</strong><sup><strong>†</strong></sup>, E. S. Song, S. Kwon, Y. Oh, and B. J. Sung*, Curvature Decouples Phase
+          Behavior and Cholesterol Flip-Flop between the Inner and Outer Leaflets of Small Unilamellar Vesicles. Submitted.
+    AWARDS:
+      - date_range: Jun 2026
+        title: Outstanding Presentation Award
+        subtitle: Division of Physical Chemistry, Korean Chemical Society
+        subtitle_italic: true
+    CONFERENCE PRESENTATIONS:
+      - bullet: >-
+          <strong>W. Jung</strong> and B. J. Sung, Development of a Novel Vesicle Equilibration Method Using Hybrid Monte Carlo–Molecular Dynamics
+          Simulation, KCS 138th General Meeting &amp; Exhibition. <em>Poster, Oct 2026</em>
+      - bullet: >-
+          <strong>W. Jung</strong> and B. J. Sung, Do We Really Equilibrate Vesicles?, A3 2026 Summer School at Harbin Institute of Technology (HIT).
+          <em>Oral, Jul 2026</em>
+      - bullet: >-
+          <strong>W. Jung</strong> and B. J. Sung, Development of a Novel Vesicle Equilibration Method Using Hybrid Monte Carlo–Molecular Dynamics
+          Simulation, 149th Summer Symposium of the Division of Physical Chemistry, Korean Chemical Society. <em>Oral, Jun 2026</em>
+      - bullet: >-
+          <strong>W. Jung</strong> and B. J. Sung, Novel Equilibration Method for Ternary Vesicle Simulations Using Hybrid Monte Carlo–Molecular Dynamics,
+          Annual Spring Meeting of the Polymer Society of Korea. <em>Poster, Apr 2026</em>
+      - bullet: >-
+          <strong>W. Jung</strong> and B. J. Sung, System-Dependent Challenges in Equilibration of Vesicle Simulation: DPPC-DIPC Studies Using the Martini
+          Force Field, KCS 136th General Meeting &amp; Exhibition. <em>Poster, Oct 2025</em>
+    RESEARCH PROJECTS:
+      - date_range: Mar 2026 – Present
+        title: Identification of Microscopic Fatigue Mechanisms in Metallic Glasses Using Machine-Learned Interatomic Potentials (MLIP)
+        highlights:
+          - Developed a DFT-trained Moment Tensor Potential (MTP) for Zr–Ni–Al metallic glasses across a wide range of compositions, validating structural
+            and dynamical properties.
+          - Currently investigating microscopic fatigue mechanisms under cyclic loading by analyzing atomic-scale correlations between local structure and
+            non-affine deformation.
+      - date_range: Mar 2025 – Present
+        title: Development of a Hybrid Monte Carlo–Molecular Dynamics (MC–MD) Method for Reliable Lipid Vesicle Equilibration
+        highlights:
+          - Developed a hybrid MC–MD method using interleaflet lipid swaps for efficient equilibration of ternary lipid vesicles.
+          - Evaluated the traditional pore equilibration method by analyzing the convergence of leaflet composition, lipid numbers, and internal water
+            content, and validated equilibrium properties against hybrid MC–MD.
+      - date_range: Jul 2024 – Present
+        title: Curvature-Induced Leaflet Asymmetry in Flip-Flop and Phase Behavior of Lipid Vesicles
+        highlights:
+          - Identified curvature-induced leaflet asymmetry in cholesterol flip-flop dynamics and phase behavior using coarse-grained MD simulations.
+          - Analyzed leaflet-specific structural properties (APM, P2), cholesterol flip-flop dynamics, and free-energy profiles across varying cholesterol
+            concentrations.
+      - date_range: Jun 2025 – Dec 2025
+        title: "Artificial Intelligence (AI) Applications in Chemistry: Trends, Opportunities, and Challenges"
+        subtitle: Sponsored by Rebellions Inc. (NPU Developer)
+        subtitle_italic: true
+        highlights:
+          - Conducted an independent analysis of AI applications and emerging technologies across major fields of chemistry.
+          - Evaluated representative case studies, scalability, potential applications, and limitations of AI-based approaches.
+    TEACHING EXPERIENCE:
+      - date_range: Mar 2026 – Aug 2026
+        title: Teaching Assistant, Scientific Writing in English
+        subtitle: Sogang University
+        subtitle_italic: true
+        location: Seoul, South Korea
+        location_on_subtitle: true
+        highlights:
+          - Guided 40 students in improving the organization, clarity, and academic style of their scientific writing in English.
+      - date_range: Sep 2025 – Feb 2026
+        title: Teaching Assistant, General Chemistry Laboratory
+        subtitle: Sogang University
+        subtitle_italic: true
+        location: Seoul, South Korea
+        location_on_subtitle: true
+        highlights:
+          - Assisted 16 undergraduate students with general chemistry experiments and laboratory techniques.
+    ADDITIONAL EXPERIENCE:
+      - date_range: Dec 2020 – Mar 2025
+        title: Chemistry Assessment Development Team Lead
+        subtitle: VERADI Co., Ltd.
+        subtitle_italic: true
+        highlights:
+          - Developed chemistry assessment items for Korea's College Scholastic Ability Test (CSAT) and coordinated the production of published mock exams,
+            including the <em>Helios</em> series.
+      - date_range: Aug 2018 – Jun 2020
+        title: Air Operations Support (CQ)
+        subtitle: Republic of Korea Air Force
+        subtitle_italic: true
+        highlights:
+          - Communicated flight schedules and operational alerts to flying squadrons.
+    TECHNICAL SKILLS & LANGUAGES:
+      - bullet: "<strong>Programming:</strong> LaTeX, Fortran, Python"
+      - bullet: "<strong>Software:</strong> PyTorch, LAMMPS, GROMACS, OpenMM, OVITO, VMD"
+      - bullet: "<strong>Languages:</strong> Korean (native), English"

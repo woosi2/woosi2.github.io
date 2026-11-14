@@ -2,7 +2,7 @@
 title: Invited seminar by Prof. Arun Yethiraj (UW–Madison)
 date: 2026-04-03
 images:
-  - src: assets/img/lab_life/2026-04-03-wisconsin-seminar-1.jpg
+  - src: assets/img/life/2026-04-03-wisconsin-seminar-1.jpg
     caption: "Prof. Yethiraj's seminar."
 ---
 

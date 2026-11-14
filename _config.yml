@@ -208,9 +208,9 @@ collections:
     output: true
   teachings:
     output: true
-  lab_life:
+  life:
     output: false
-    permalink: /lab-life/ # search results open the board (posts have no pages of their own)
+    permalink: /life/ # search results open the board (posts have no pages of their own)
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
