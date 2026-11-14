@@ -31,11 +31,17 @@ nav_order: 5
   }
   .lab-life .post-row {
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-    gap: 2rem;
-    align-items: start;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 2.5rem;
+    align-items: center;
     padding: 1.75rem 0;
     border-bottom: 1px solid var(--global-divider-color);
+  }
+  .lab-life .post-row:nth-child(even) {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+  .lab-life .post-row:nth-child(even) .carousel {
+    order: -1;
   }
   .lab-life .post-date {
     font-size: 0.85rem;
@@ -73,11 +79,10 @@ nav_order: 5
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: contain;
-    border-radius: 6px;
-    background: var(--global-divider-color);
   }
   .lab-life .slide figcaption {
     padding: 0.5rem 0.25rem 0;
+    text-align: center;
     font-size: 0.85rem;
     color: var(--global-text-color-light);
   }
@@ -130,6 +135,12 @@ nav_order: 5
     .lab-life .post-row {
       grid-template-columns: minmax(0, 1fr);
       gap: 1rem;
+    }
+    .lab-life .post-row:nth-child(even) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .lab-life .post-row:nth-child(even) .carousel {
+      order: 0;
     }
   }
 </style>
