@@ -1,0 +1,713 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Research | Woo Seok Jung </title> <meta name="author" content="Woo Seok Jung"> <meta name="description" content="Research projects on lipid membranes and metallic glasses, connecting microscopic structure and dynamics to macroscopic behavior through molecular simulation."> <meta name="keywords" content="Soft Matter, Statistical Mechanics, Molecular Dynamics / Monte-Carlo Simulation, Machine-Learning"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://woosi2.github.io/research/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Woo Seok Jung </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/research/">Research <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/life/">Life </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style type="text/css">
+    .post:has(.research-projects) > .post-header .post-title { font-weight: 700; }
+.post:has(.research-projects) > .post-header .post-description { max-width: 78ch; line-height: 1.75; margin-top: 0.75rem; }
+.research-projects { --research-muted: color-mix(in srgb, var(--global-text-color) 68%, var(--global-bg-color)); --research-border: color-mix(in srgb, var(--global-text-color) 13%, var(--global-bg-color)); --research-surface: color-mix(in srgb, var(--global-text-color) 1.5%, var(--global-bg-color)); margin-top: 2.75rem; }
+.research-projects .research-project-group + .research-project-group { margin-top: 3.5rem; }
+.research-projects .research-project-group > h2 { font-size: 1.5rem; font-weight: 600; line-height: 1.35; margin: 0 0 1.25rem; }
+.research-projects .research-project-card { scroll-margin-top: 6rem; display: grid; grid-template-columns: 32% minmax(0, 1fr); overflow: hidden; border: 1px solid var(--research-border); border-radius: 4px; background: var(--global-bg-color); margin-bottom: 1.5rem; }
+.research-projects .research-project-card--text { grid-template-columns: minmax(0, 1fr); }
+.research-projects .research-project-visual { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; margin: 1.25rem 0 1.25rem 1.25rem; }
+.research-projects .research-project-visual img { display: block; width: 100%; height: auto; object-fit: contain; }
+.research-projects .research-project-content { display: flex; flex-direction: column; min-width: 0; padding: 1.75rem 1.75rem 1.5rem; }
+.research-projects .research-project-content h3 { font-size: 1.45rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.015em; margin: 0 0 0.75rem; }
+.research-projects .research-project-meta { font-size: 0.8rem; line-height: 1.65; margin: 0 0 1rem; color: var(--research-muted); }
+.research-projects .research-project-summary { font-size: 0.98rem; line-height: 1.8; margin: 0 0 1rem; }
+.research-projects .research-project-methods { font-size: 0.8rem; line-height: 1.7; margin: 0 0 1.25rem; color: var(--research-muted); }
+.research-projects .research-project-methods span { font-weight: 500; color: var(--global-text-color); }
+.research-projects .research-project-actions { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.65rem 1.25rem; margin-top: auto; padding-top: 0.5rem; }
+.research-projects .research-project-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+.research-projects .research-project-links a { color: var(--global-text-color); text-decoration: underline; text-decoration-color: var(--research-border); text-underline-offset: 0.25em; }
+.research-projects .research-project-links a:hover { color: var(--global-theme-color); text-decoration-color: currentColor; }
+.research-projects a:focus-visible, .research-projects button:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 4px; }
+.research-projects .research-project-group--additional > h2 { font-size: 1.35rem; }
+.research-projects .research-project-group--additional .research-project-content { padding: 1.4rem 1.5rem; }
+.research-projects .research-project-group--additional .research-project-content h3 { font-size: 1.2rem; line-height: 1.4; }
+.research-projects .research-project-group--additional .research-project-summary { font-size: 0.95rem; line-height: 1.75; margin-bottom: 0; }
+.research-projects .research-details-toggle { padding: 0; border: 0; background: transparent; color: var(--research-muted); font-family: inherit; font-size: 0.85rem; line-height: 1.65; cursor: pointer; text-decoration: underline; text-decoration-color: var(--research-border); text-underline-offset: 0.25em; }
+.research-projects .research-details-toggle:hover, .research-projects .research-details-toggle[aria-expanded='true'] { color: var(--global-theme-color); text-decoration-color: currentColor; }
+.research-projects .research-project-details { grid-column: 1 / -1; overflow: hidden; border-top: 1px solid var(--research-border); background: var(--research-surface); }
+.research-projects .research-project-details[hidden] { display: none; }
+.research-projects .research-details-inner { padding: 1.75rem; }
+.research-projects .research-details-inner > p { max-width: 78ch; font-size: 0.95rem; line-height: 1.8; margin: 0 0 1rem; }
+.research-projects .research-detail-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin: 1.5rem 0; align-items: start; }
+.research-projects .research-detail-figures figure { min-width: 0; margin: 0; }
+.research-projects .research-detail-figures img { width: 100%; height: auto; object-fit: contain; }
+.research-projects .research-detail-figures figcaption { font-size: 0.8rem; line-height: 1.6; margin-top: 0.65rem; color: var(--research-muted); font-style: italic; text-align: center; }
+.research-projects .research-related-papers { margin-top: 1.5rem; }
+.research-projects .research-related-papers h4 { font-size: 1.05rem; font-weight: 600; line-height: 1.4; margin: 0 0 0.75rem; scroll-margin-top: 6rem; }
+.research-projects .research-related-papers ul { padding-left: 1.2rem; margin: 0; font-size: 0.9rem; line-height: 1.75; }
+.research-projects .research-related-papers li + li { margin-top: 0.75rem; }
+@media (max-width: 767px) {
+  .research-projects { margin-top: 2rem; }
+  .research-projects .research-project-card { grid-template-columns: minmax(0, 1fr); }
+  .research-projects .research-project-visual { margin: 1.25rem 1.25rem 0; }
+  .research-projects .research-project-content, .research-projects .research-project-group--additional .research-project-content { padding: 1.25rem; }
+  .research-projects .research-project-content h3 { font-size: 1.3rem; line-height: 1.35; }
+  .research-projects .research-project-group--additional .research-project-content h3 { font-size: 1.15rem; }
+  .research-projects .research-details-inner { padding: 1.25rem; }
+  .research-projects .research-detail-figures { grid-template-columns: minmax(0, 1fr); }
+}
+
+  </style> <div class="post"> <header class="post-header"> <h1 class="post-title">Research</h1> <p class="post-description">Research projects on lipid membranes and metallic glasses, connecting microscopic structure and dynamics to macroscopic behavior through molecular simulation.</p> </header> <article> <div class="research-projects"> <section class="research-project-group research-project-group--featured" aria-labelledby="featured-research-heading"> <h2 id="featured-research-heading">Featured Research</h2> <article class="research-project-card" id="vesicle-leaflet-asymmetry" aria-labelledby="vesicle-leaflet-asymmetry-title"> <figure class="research-project-visual"> <img src="/assets/img/projects/vesicle_asymmetry.png" alt="Coarse-grained DPPC/cholesterol vesicle showing the inner and outer leaflets." loading="lazy" data-zoomable=""> </figure> <div class="research-project-content"> <h3 id="vesicle-leaflet-asymmetry-title">Curvature-Induced Leaflet Asymmetry in Flip-Flop and Phase Behavior of Lipid Vesicles</h3> <p class="research-project-meta">Jul 2024 – Present</p> <p class="research-project-summary">Identified curvature-induced leaflet asymmetry in cholesterol flip-flop dynamics and phase behavior using coarse-grained MD simulations. Analyzed leaflet-specific structural properties, cholesterol flip-flop dynamics, and free-energy profiles across varying cholesterol concentrations.</p> <p class="research-project-methods"><span>Methods / Focus:</span> Coarse-grained MD (Martini) · Area per molecule · P2 order parameter · Cholesterol flip-flop · Free-energy profiles</p> <div class="research-project-actions"> <ul class="research-project-links" aria-label="Related publications"> <li><a href="#vesicle-leaflet-asymmetry-related-papers" data-output-details="vesicle-leaflet-asymmetry-details" data-output-focus="vesicle-leaflet-asymmetry-related-papers">Papers</a></li> </ul> <button class="research-details-toggle" type="button" aria-expanded="false" aria-controls="vesicle-leaflet-asymmetry-details">More details ↓</button> </div> </div> <div class="research-project-details" id="vesicle-leaflet-asymmetry-details" hidden=""> <div class="research-details-inner"> <p>In small vesicles, the high curvature makes the inner and outer leaflets differ in area and lipid packing. Using coarse-grained Martini simulations of DPPC/cholesterol vesicles, I study how this curvature induces asymmetry in cholesterol flip-flop dynamics and phase behavior between the two leaflets.</p> <section class="research-related-papers" aria-labelledby="vesicle-leaflet-asymmetry-related-papers"> <h4 id="vesicle-leaflet-asymmetry-related-papers" tabindex="-1">Related Papers</h4> <ul> <li>J. Yang<sup>†</sup>, <strong>W. Jung</strong><sup>†</sup>, E. S. Song, S. Kwon, Y. Oh, and B. J. Sung*, Curvature Decouples Phase Behavior and Cholesterol Flip-Flop between the Inner and Outer Leaflets of Small Unilamellar Vesicles. Submitted.</li> </ul> </section> </div> </div> </article> <article class="research-project-card" id="vesicle-equilibration" aria-labelledby="vesicle-equilibration-title"> <figure class="research-project-visual"> <img src="/assets/img/projects/vesicle_equilibration_thumb.png" alt="Lipid-swap Monte Carlo move between the inner and outer leaflets of a vesicle." loading="lazy" data-zoomable=""> </figure> <div class="research-project-content"> <h3 id="vesicle-equilibration-title">Hybrid Monte Carlo–Molecular Dynamics for Reliable Lipid Vesicle Equilibration</h3> <p class="research-project-meta">Mar 2025 – Present</p> <p class="research-project-summary">Developed a hybrid MC–MD method using interleaflet lipid swaps for efficient equilibration of ternary lipid vesicles. Evaluated the traditional pore equilibration method by analyzing the convergence of leaflet composition, lipid numbers, and internal water content, and validated equilibrium properties against hybrid MC–MD.</p> <p class="research-project-methods"><span>Methods / Focus:</span> Hybrid MC–MD · Interleaflet lipid swaps · Metropolis criterion · GROMACS 2025 · Leaflet composition convergence</p> <div class="research-project-actions"> <ul class="research-project-links" aria-label="Related publications"> <li><a href="#vesicle-equilibration-related-papers" data-output-details="vesicle-equilibration-details" data-output-focus="vesicle-equilibration-related-papers">Papers</a></li> </ul> <button class="research-details-toggle" type="button" aria-expanded="false" aria-controls="vesicle-equilibration-details">More details ↓</button> </div> </div> <div class="research-project-details" id="vesicle-equilibration-details" hidden=""> <div class="research-details-inner"> <p>Building on the asymmetry found in binary vesicles, I am extending my research to more complex ternary vesicles known to form raft-like domains. Interpreting phase behavior in these systems requires well-defined equilibrium conditions. In molecular dynamics, however, phospholipid flip-flop is far slower than accessible simulation times, so the leaflet composition of a vesicle stays close to the initial guess made when the system is built.</p> <p>To address this, I am developing a vesicle equilibration methodology based on hybrid Monte Carlo–molecular dynamics (MC–MD). Periodically during MD, Monte Carlo moves swap lipids between the inner and outer leaflets and are accepted or rejected with the Metropolis criterion based on the energy change, allowing the leaflet composition to relax on timescales that plain MD cannot reach. The method is implemented directly in GROMACS 2025, and the code will be released publicly.</p> <div class="research-detail-figures"> <figure><img src="/assets/img/projects/vesicle_equilibration_eq2.png" alt="Lipid-swap Monte Carlo move between a DPPC and a DIPC in opposite leaflets." loading="lazy" data-zoomable=""><figcaption>Lipid-swap Monte Carlo move. A DPPC and a DIPC in opposite leaflets exchange places, and the swap is accepted with the Metropolis criterion based on the energy change ΔE = E<sub>aft</sub> − E<sub>bef</sub>.</figcaption></figure> <figure><img src="/assets/img/projects/vesicle_equilibration_eq1.png" alt="Inner-leaflet DPPC fraction versus time for the pore method and MC–MD." loading="lazy" data-zoomable=""><figcaption>Inner-leaflet DPPC fraction X<sub>Inner, DPPC</sub> during equilibration. The pore method converges in about 20 µs, whereas MC–MD converges in about 250 ns, roughly 80 times faster.</figcaption></figure> </div> <section class="research-related-papers" aria-labelledby="vesicle-equilibration-related-papers"> <h4 id="vesicle-equilibration-related-papers" tabindex="-1">Related Papers</h4> <ul> <li> <strong>W. Jung</strong> and B. J. Sung*, Time to Revisit: Do We Really Equilibrate a Vesicle? Manuscript in preparation.</li> </ul> </section> </div> </div> </article> <article class="research-project-card" id="metallic-glass-fatigue" aria-labelledby="metallic-glass-fatigue-title"> <figure class="research-project-visual"> <img src="/assets/img/projects/metallic_glass_3.png" alt="A full icosahedral cluster in a Zr–Ni–Al metallic glass." loading="lazy" data-zoomable=""> </figure> <div class="research-project-content"> <h3 id="metallic-glass-fatigue-title">Microscopic Fatigue Mechanisms in Metallic Glasses Using Machine-Learned Interatomic Potentials</h3> <p class="research-project-meta">Mar 2026 – Present</p> <p class="research-project-summary">Developed a DFT-trained Moment Tensor Potential (MTP) for Zr–Ni–Al metallic glasses across a wide range of compositions, validating structural and dynamical properties. Currently investigating microscopic fatigue mechanisms under cyclic loading by analyzing atomic-scale correlations between local structure and non-affine deformation.</p> <p class="research-project-methods"><span>Methods / Focus:</span> DFT · Moment Tensor Potential · Cyclic-loading MD · Icosahedral cluster networks · Non-affine deformation</p> <div class="research-project-actions"> <button class="research-details-toggle" type="button" aria-expanded="false" aria-controls="metallic-glass-fatigue-details">More details ↓</button> </div> </div> <div class="research-project-details" id="metallic-glass-fatigue-details" hidden=""> <div class="research-details-inner"> <p>Metallic glasses combine high strength with the absence of crystalline defects, yet their fatigue limits are low, and the general mechanism behind this remains unclear. Addressing this question requires simulations across a broad range of compositions with accuracy close to first-principles calculations.</p> <p>To this end, I developed a machine-learning interatomic potential (MLIP) for Zr–Ni–Al metallic glasses trained on DFT data. Using MD simulations of cyclic loading, I am now studying how local atomic structure, such as icosahedral clusters and their networks, relates to atomic rearrangements, to uncover the microscopic mechanisms of fatigue in metallic glasses.</p> <div class="research-detail-figures"> <figure><img src="/assets/img/projects/metallic_glass_1.png" alt="Parity plot of MTP versus DFT energies." loading="lazy" data-zoomable=""><figcaption>Parity plot of the moment tensor potential (MTP) against DFT energies.</figcaption></figure> <figure><img src="/assets/img/projects/metallic_glass_2.png" alt="Parity plot of MTP versus DFT forces." loading="lazy" data-zoomable=""><figcaption>Parity plot of the MTP against DFT forces.</figcaption></figure> <figure><img src="/assets/img/projects/metallic_glass_5.png" alt="Stress–strain curves under strain-controlled cyclic loading." loading="lazy" data-zoomable=""><figcaption>Strain-controlled cyclic loading of Zr<sub>7</sub>Ni<sub>3</sub>Al<sub>1</sub> (R = 0.1, ε<sub>max</sub> = 0.02–0.06) over 100 cycles.</figcaption></figure> <figure><img src="/assets/img/projects/metallic_glass_4.png" alt="Connected network of icosahedral clusters and the largest-cluster fraction for four compositions." loading="lazy" data-zoomable=""><figcaption>Connected network of icosahedral clusters and the largest cluster as a fraction of all icosahedra for four compositions (931 = Zr<sub>9</sub>Ni<sub>3</sub>Al<sub>1</sub>, 731 = Zr<sub>7</sub>Ni<sub>3</sub>Al<sub>1</sub>, 933 = Zr<sub>9</sub>Ni<sub>3</sub>Al<sub>3</sub>, 733 = Zr<sub>7</sub>Ni<sub>3</sub>Al<sub>3</sub>).</figcaption></figure> </div> </div> </div> </article> </section> <section class="research-project-group research-project-group--additional" aria-labelledby="additional-research-heading"> <h2 id="additional-research-heading">Additional Research Projects</h2> <article class="research-project-card research-project-card--text" id="ai-in-chemistry" aria-labelledby="ai-in-chemistry-title"> <div class="research-project-content"> <h3 id="ai-in-chemistry-title">Artificial Intelligence Applications in Chemistry: Trends, Opportunities, and Challenges</h3> <p class="research-project-meta">Jun 2025 – Dec 2025 · Rebellions Inc. (NPU Developer)</p> <p class="research-project-summary">Conducted an independent analysis of AI applications and emerging technologies across major fields of chemistry. Evaluated representative case studies, scalability, potential applications, and limitations of AI-based approaches.</p> </div> </article> </section> </div> <script>
+  (() => {
+    const animations = new WeakMap();
+    function setExpanded(button, expanded, animate = true) {
+      const panel = document.getElementById(button.getAttribute("aria-controls"));
+      const previous = animations.get(panel);
+      if (previous) previous.cancel();
+      button.setAttribute("aria-expanded", String(expanded));
+      button.textContent = expanded ? "Less ↑" : "More details ↓";
+      panel.hidden = false;
+      if (!animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        panel.hidden = !expanded;
+        return;
+      }
+      const height = panel.scrollHeight;
+      const animation = panel.animate([{ height: expanded ? "0px" : `${height}px` }, { height: expanded ? `${height}px` : "0px" }], {
+        duration: 180,
+        easing: "ease-out",
+      });
+      animations.set(panel, animation);
+      animation.onfinish = () => {
+        panel.hidden = !expanded;
+        animations.delete(panel);
+      };
+    }
+    document.querySelectorAll(".research-details-toggle").forEach((button) => {
+      button.addEventListener("click", () => setExpanded(button, button.getAttribute("aria-expanded") !== "true"));
+    });
+    document.querySelectorAll("[data-output-details]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const button = document.querySelector(`[aria-controls="${link.dataset.outputDetails}"]`);
+        if (button) setExpanded(button, true, false);
+        const focusTarget = document.getElementById(link.dataset.outputFocus);
+        if (focusTarget) {
+          event.preventDefault();
+          if (window.location.hash !== link.hash) window.history.pushState(null, "", link.hash);
+          focusTarget.focus({ preventScroll: true });
+          focusTarget.scrollIntoView({ block: "start" });
+        }
+      });
+    });
+    function revealHash() {
+      const target = document.getElementById(window.location.hash.slice(1));
+      const panel = target?.closest(".research-project-details");
+      if (!panel) return;
+      const button = document.querySelector(`[aria-controls="${panel.id}"]`);
+      if (button) {
+        setExpanded(button, true, false);
+        target.scrollIntoView();
+      }
+    }
+    window.addEventListener("hashchange", revealHash);
+    revealHash();
+  })();
+</script> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Woo Seok Jung. @ Woo Seok Jung </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "About",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-publications",
+          title: "Publications",
+          description: "publications by categories in reversed chronological order. generated by jekyll-scholar.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-research",
+          title: "Research",
+          description: "Research projects on lipid membranes and metallic glasses, connecting microscopic structure and dynamics to macroscopic behavior through molecular simulation.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/research/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "nav-life",
+          title: "Life",
+          description: "Moments from the Soft Matter Computational Chemistry Laboratory at Sogang University.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/life/";
+          },
+        },{id: "post-a-post-with-marimo-snippets",
+        
+          title: "a post with marimo snippets",
+        
+        description: "running Python in the browser with marimo",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/marimo/";
+          
+        },
+      },{id: "post-a-post-with-plotly-js",
+        
+          title: "a post with plotly.js",
+        
+        description: "this is what included plotly.js code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/plotly/";
+          
+        },
+      },{id: "post-a-post-with-image-galleries",
+        
+          title: "a post with image galleries",
+        
+        description: "this is what included image galleries could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/photo-gallery/";
+          
+        },
+      },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
+        
+          title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
+          
+        },
+      },{id: "post-a-post-with-tabs",
+        
+          title: "a post with tabs",
+        
+        description: "this is what included tabs in a post could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/tabs/";
+          
+        },
+      },{id: "post-a-post-with-typograms",
+        
+          title: "a post with typograms",
+        
+        description: "this is what included typograms code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/typograms/";
+          
+        },
+      },{id: "post-a-post-that-can-be-cited",
+        
+          title: "a post that can be cited",
+        
+        description: "this is what a post that can be cited looks like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/post-citation/";
+          
+        },
+      },{id: "post-a-post-with-pseudo-code",
+        
+          title: "a post with pseudo code",
+        
+        description: "this is what included pseudo code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/pseudocode/";
+          
+        },
+      },{id: "post-a-post-with-code-diff",
+        
+          title: "a post with code diff",
+        
+        description: "this is how you can display code diffs",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/code-diff/";
+          
+        },
+      },{id: "post-a-post-with-advanced-image-components",
+        
+          title: "a post with advanced image components",
+        
+        description: "this is what advanced image components could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/advanced-images/";
+          
+        },
+      },{id: "post-a-post-with-vega-lite",
+        
+          title: "a post with vega lite",
+        
+        description: "this is what included vega lite code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/vega-lite/";
+          
+        },
+      },{id: "post-a-post-with-geojson",
+        
+          title: "a post with geojson",
+        
+        description: "this is what included geojson code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/geojson-map/";
+          
+        },
+      },{id: "post-a-post-with-echarts",
+        
+          title: "a post with echarts",
+        
+        description: "this is what included echarts code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/echarts/";
+          
+        },
+      },{id: "post-a-post-with-chart-js",
+        
+          title: "a post with chart.js",
+        
+        description: "this is what included chart.js code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/chartjs/";
+          
+        },
+      },{id: "post-a-post-with-tikzjax",
+        
+          title: "a post with TikZJax",
+        
+        description: "this is what included TikZ code could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/tikzjax/";
+          
+        },
+      },{id: "post-a-post-with-jupyter-notebook",
+        
+          title: "a post with jupyter notebook",
+        
+        description: "an example of a blog post with jupyter notebook",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/jupyter-notebook/";
+          
+        },
+      },{id: "post-a-post-with-custom-blockquotes",
+        
+          title: "a post with custom blockquotes",
+        
+        description: "an example of a blog post with custom blockquotes",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/custom-blockquotes/";
+          
+        },
+      },{id: "post-a-post-with-table-of-contents-on-a-sidebar",
+        
+          title: "a post with table of contents on a sidebar",
+        
+        description: "an example of a blog post with table of contents on a sidebar",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/sidebar-table-of-contents/";
+          
+        },
+      },{id: "post-a-post-with-audios",
+        
+          title: "a post with audios",
+        
+        description: "this is what included audios could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/audios/";
+          
+        },
+      },{id: "post-a-post-with-videos",
+        
+          title: "a post with videos",
+        
+        description: "this is what included videos could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/videos/";
+          
+        },
+      },{id: "post-displaying-beautiful-interactive-tables",
+        
+          title: "displaying beautiful interactive tables",
+        
+        description: "an example of how to use interactive tables in al-folio",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/tables/";
+          
+        },
+      },{id: "post-a-post-with-table-of-contents",
+        
+          title: "a post with table of contents",
+        
+        description: "an example of a blog post with table of contents",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/table-of-contents/";
+          
+        },
+      },{id: "post-a-post-with-giscus-comments",
+        
+          title: "a post with giscus comments",
+        
+        description: "an example of a blog post with giscus comments",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/giscus-comments/";
+          
+        },
+      },{id: "post-یک-نوشتهٔ-راست-چین",
+        
+          title: "یک نوشتهٔ راست‌چین",
+        
+        description: "نمونه‌ای از پشتیبانی زبان‌های راست‌چین",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/rtl/";
+          
+        },
+      },{id: "post-displaying-external-posts-on-your-al-folio-blog",
+        
+          title: 'Displaying External Posts on Your al-folio Blog <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
+          
+        },
+      },{id: "post-a-post-with-redirect",
+        
+          title: "a post with redirect",
+        
+        description: "you can also redirect to assets like pdf",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/example_pdf.pdf";
+          
+        },
+      },{id: "post-a-post-with-diagrams",
+        
+          title: "a post with diagrams",
+        
+        description: "an example of a blog post with diagrams",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/diagrams/";
+          
+        },
+      },{id: "post-a-distill-style-blog-post",
+        
+          title: "a distill-style blog post",
+        
+        description: "an example of a distill-style blog post and main elements",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/distill/";
+          
+        },
+      },{id: "post-a-post-with-twitter",
+        
+          title: "a post with twitter",
+        
+        description: "an example of a blog post with twitter",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2020/twitter/";
+          
+        },
+      },{id: "post-a-post-with-disqus-comments",
+        
+          title: "a post with disqus comments",
+        
+        description: "an example of a blog post with disqus comments",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2015/disqus-comments/";
+          
+        },
+      },{id: "post-a-post-with-math",
+        
+          title: "a post with math",
+        
+        description: "an example of a blog post with some math",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2015/math/";
+          
+        },
+      },{id: "post-a-post-with-code",
+        
+          title: "a post with code",
+        
+        description: "an example of a blog post with some code",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2015/code/";
+          
+        },
+      },{id: "post-a-post-with-images",
+        
+          title: "a post with images",
+        
+        description: "this is what included images could look like",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2015/images/";
+          
+        },
+      },{id: "post-a-post-with-formatting-and-links",
+        
+          title: "a post with formatting and links",
+        
+        description: "march &amp; april, looking forward to summer",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2015/formatting-and-links/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "life-ising-model-discussion",
+          title: 'Ising model discussion',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-polymer-physics-study-rubinstein-amp-colby",
+          title: 'Polymer physics study (Rubinstein &amp;amp; Colby)',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-zwanzig-study-discussion",
+          title: 'Zwanzig study discussion',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-setting-up-the-gibbs-cluster-for-the-first-time",
+          title: 'Setting up the Gibbs cluster for the first time',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-polymer-society-of-korea-meeting-in-jeju",
+          title: 'Polymer Society of Korea meeting in Jeju',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-cats-we-met-on-a-campus-walk",
+          title: 'Cats we met on a campus walk',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-korean-chemical-society-meeting-in-changwon",
+          title: 'Korean Chemical Society meeting in Changwon',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-ups-repair",
+          title: 'UPS repair',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-homecoming-day-with-dr-inhyuk-jang-and-dr-hyeonjeong-bae",
+          title: 'Homecoming day with Dr. Inhyuk Jang and Dr. Hyeonjeong Bae',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-invited-seminar-by-prof-arun-yethiraj-uw-madison",
+          title: 'Invited seminar by Prof. Arun Yethiraj (UW–Madison)',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-repairing-the-maxwell-and-flory-clusters",
+          title: 'Repairing the Maxwell and Flory clusters',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-metallic-glass-discussion",
+          title: 'Metallic glass discussion',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-27th-discussion-meeting-on-polymer-physics-theory",
+          title: '27th Discussion Meeting on Polymer Physics Theory',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-kcs-physical-chemistry-division-meeting",
+          title: 'KCS Physical Chemistry Division meeting',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-a3-summer-school-at-harbin-institute-of-technology",
+          title: 'A3 Summer School at Harbin Institute of Technology',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-sogang-university-festival",
+          title: 'Sogang University festival',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-chemists-39-day",
+          title: 'Chemists&amp;#39; Day',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-maxwell-repair",
+          title: 'Maxwell repair',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "life-korean-chemical-society-meeting-in-suwon",
+          title: 'Korean Chemical Society meeting in Suwon',
+          description: "",
+          section: "Life",handler: () => {
+              window.location.href = "/life/";
+            },},{id: "news-joined-the-soft-matter-computational-chemistry-laboratory-at-sogang-university-as-an-undergraduate-researcher",
+          title: 'Joined the Soft Matter Computational Chemistry Laboratory at Sogang University as an undergraduate...',
+          description: "",
+          section: "News",},{id: "news-received-my-b-s-in-chemistry-from-sogang-university",
+          title: 'Received my B.S. in Chemistry from Sogang University.',
+          description: "",
+          section: "News",},{id: "news-started-my-m-s-in-chemistry-at-sogang-university",
+          title: 'Started my M.S. in Chemistry at Sogang University.',
+          description: "",
+          section: "News",},{id: "news-received-the-outstanding-presentation-award-for-my-oral-presentation-at-the-149th-summer-symposium-of-the-division-of-physical-chemistry-korean-chemical-society",
+          title: 'Received the Outstanding Presentation Award for my oral presentation at the 149th Summer...',
+          description: "",
+          section: "News",},{id: "news-completed-the-coursework-for-my-m-s-in-chemistry",
+          title: 'Completed the coursework for my M.S. in Chemistry.',
+          description: "",
+          section: "News",},{id: "projects-fatigue-of-metallic-glasses",
+          title: 'Fatigue of Metallic Glasses',
+          description: "Machine-learning interatomic potentials for the microscopic mechanism of fatigue",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/metallic_glass_mlp/";
+            },},{id: "projects-asymmetry-in-binary-vesicles",
+          title: 'Asymmetry in Binary Vesicles',
+          description: "Curvature-induced asymmetry in cholesterol flip-flop and phase behavior of DPPC/cholesterol vesicles",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/vesicle_asymmetry/";
+            },},{id: "projects-vesicle-equilibration",
+          title: 'Vesicle Equilibration',
+          description: "Hybrid Monte Carlo–MD for equilibrating the leaflet composition of multicomponent vesicles",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/vesicle_equilibration/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%77%73%68%72%30%33%30%37@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/woosi2", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
